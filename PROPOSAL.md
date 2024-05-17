@@ -2,7 +2,7 @@
 
 ## Description
 
-This is an API for an scavenger hunt application. Users can both create scavenger hunts and partipate in hunts created by other users.
+"Riddle Me This" is a scavenger hunt application that allows users to create and participate in interactive and challenging scavenger hunts. Creators design scavenger hunts by crafting riddles and specifying the items that participants need to locate. Each riddle corresponds to one item. Participants, using their phones, solve these riddles and upload a picture of what they believe to be the correct answer. Each participant is given a certain amount of time to complete the game. Upon selecting a riddle, participants can upload their answer image directly within the app. If the submitted picture is correct, they receive feedback that their answer is correct; if incorrect, they are prompted to try again. Multiple participants can join a single hunt, and their progress is tracked and displayed on a leaderboard that updates whenever a user refreshes the page.
 
 ## User Stories
 
