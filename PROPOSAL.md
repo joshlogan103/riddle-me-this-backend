@@ -41,11 +41,13 @@ This is an API for an scavenger hunt application. Users can both create scavenge
 
 * AAP, I would like to be able to have a calendar event provided for me automatically when I join a hunt.
 * AAP, I would like my account to keep track of how many hunts I have won and participated in.
-* AAP, I would like to have a rank associated with my account based on my participation.
+* AAP, I would like to have a rank associated with my account based on my participation and wins.
 * AAP, I want the leaderboard to prioritize number of items found, and fallback to time completed when there is a tie.
 * AAP, I would like to be able to rate a hunt, and view the rating of a hunt in a list view if a rating exists.
 
 ## ERD
+
+
 
 ## Component Hierarchy Diagram
 
