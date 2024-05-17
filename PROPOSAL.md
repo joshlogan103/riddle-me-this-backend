@@ -57,6 +57,8 @@
 
 [View Component Hierarchy Diagram on Lucid](https://lucid.app/lucidchart/0608d439-ea6f-4d75-adf5-ccd8d7321e6f/edit?invitationId=inv_64e25d18-a172-4b88-ab75-f54fb3590368&page=0_0#)
 
+# Routes
+
 #### React Routes
 
 <!-- <Routes>
@@ -70,6 +72,44 @@
   <Route path='/create-hunt-template' element={<CreateHuntTemplate />} />
   <Route path='/launch-hunt' element={<LaunchHunt />} />
 </Routes> -->
+
+#### Django URL Paths
+
+<!-- urlpatterns = [
+  # Home
+  path('', Home.as_view(), name = 'home'),
+
+  # Profile
+  path('user/<int:user_id>/profiles/', ProfileList.as_view(), name = 'profile-list'),
+  path('profiles/<int:id>/', ProfileDetail.as_view(), name = 'profile-detail'),
+
+  # Participations
+  path('profiles/<int:profile_id>/participations/', ParticipationsList.as_view(), name = 'participations-list'),
+  path('profiles/<int:profile_id>/participations/<int:participation_id>/', ParticipationDetail.as_view(), name = 'participation-detail'),
+
+  # Hunt Instances
+  path('hunt_template/<int:hunt_template_id>/hunt_instances/', HuntInstancesList.as_view(), name = 'hunt-instance-list'),
+  path('hunt_template/<int:hunt_template_id>/hunt_instances/<int:hunt_instance_id>/', HuntInstanceDetail.as_view(), name = 'hunt-instance-detail'),
+
+  # Scavenger Hunt Template
+  path('hunt_template/', HuntTemplateList.as_view(), name = 'hunt-template-list'),
+  path('hunt_template/<int:hunt_template_id>/', HuntTemplateDetail.as_view(), name = 'hunt-template-detail'),
+
+  # Riddle-Items
+  path('hunt_templates/<int:hunt_template_id>/riddle-items', RiddleItemList.as_view(), name = 'riddle-item-list'),
+  path('hunt_templates/<int:hunt_template_id>/riddle-items/<int:riddle_item_id>/', RiddleItemDetail.as_view(), name = 'riddle-item-detail'),
+
+  # Item
+  path('items/', ItemList.as_view(), name = 'item-list'),
+
+  # Compare Image
+  path('participation/<int:participation_id>/submission', ImageSubmission.as_view(), name = 'image-submission'),
+
+  # Users
+  path('users/register/', CreateUserView.as_view(), name='register'),
+  path('users/login/', LoginView.as_view(), name='login'),
+  path('users/token/refresh/', VerifyUserView.as_view(), name='token_refresh')
+] -->
 
 ## Wireframes
 
