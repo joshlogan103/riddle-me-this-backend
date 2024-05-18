@@ -36,3 +36,10 @@ class HuntInstanceSerializer(serializers.HyperlinkedModelSerializer):
         model = HuntInstance
         fields = "__all__"
         extra_kwargs = {'url': {'view_name': 'hunt-instance-detail', 'lookup_field': 'id'}}
+
+class ItemSerializer(serializers.HyperlinkedModelSerializer):
+    
+    class Meta:
+        model = Item
+        fields = "__all__"
+        extra_kwargs = {'url': {'view_name': 'item-detail', 'lookup_field': 'id'}}
