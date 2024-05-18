@@ -43,3 +43,13 @@ class ItemSerializer(serializers.HyperlinkedModelSerializer):
         model = Item
         fields = "__all__"
         extra_kwargs = {'url': {'view_name': 'item-detail', 'lookup_field': 'id'}}
+
+class RiddleItemSerializer(serializers.HyperlinkedModelSerializer):
+    item = ItemSerializer(read_only=True)
+    scavenger_hunt = ScavengerHuntSerializer(read_only=True)
+    riddle_item_submissions = RiddleItemSubmissionSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = RiddleItem
+        fields = "__all__"
+        extra_kwargs = {'url': {'view_name': 'riddle-item-detail', 'lookup_field': 'id'}}
