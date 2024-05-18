@@ -42,7 +42,7 @@ class Item(models.Model):
 
 class RiddleItem(models.Model):
     riddle = models.CharField(max_length=100)
-    item = models.OneToOneField(Item, on_delete=models.CASCADE)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
     scavenger_hunt = models.ForeignKey(ScavengerHunt, on_delete=models.CASCADE)
 
     def __str__(self):
