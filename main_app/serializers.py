@@ -73,3 +73,12 @@ class ParticipationSerializer(serializers.HyperlinkedModelSerializer):
         model = Participation
         fields = "__all__"
         extra_kwargs = {'url': {'view_name': 'participation-detail', 'lookup_field': 'id'}}
+
+class RiddleItemSubmissionSerializer(serializers.HyperlinkedModelSerializer):
+    riddle_item = RiddleItemSerializer(read_only=True)
+    participation = ParticipationSerializer(read_only=True)
+
+    class Meta:
+        model = RiddleItemSubmission
+        fields = "__all__"
+        extra_kwargs = {'url': {'view_name': 'riddle-item-submission-detail', 'lookup_field': 'id'}}
