@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Profile
+from .models import Profile, ScavengerHunt, HuntInstance, Item, RiddleItem, RiddleItemSubmission, Participation
 from django.contrib.auth.models import User
 
 
@@ -18,3 +18,14 @@ class UserSerializer(serializers.ModelSerializer):
         )
 
         return user
+
+class ScavengerHuntSerializer(serializers.HyperlinkedModelSerializer):
+    riddle_items = RiddleItemSerializer(many=True, read_only=True)
+    hunt_instances = HuntInstanceSerializer(many=True, read_only=True)
+    
+    class Meta:
+        model = ScavengerHunt
+        fields = "__all__"
+        extra_kwargs = {'url': {'view_name': 'scavengerhunt-detail', 'lookup_field': 'id'}}
+
+    
