@@ -1,23 +1,12 @@
 from django.urls import path
-from .views import (
-    CreateUserView,
-    LoginView,
-    VerifyUserView,
-    ProfileList,
-    ProfileDetail,
-    ParticipationsList,
-    ParticipationDetail,
-    HuntInstanceList,
-    HuntInstanceDetail,
-    HuntTemplateList,
-    HuntTemplateDetail,
-    RiddleItemList,
-    RiddleItemDetail,
-    ItemList,
-    ItemDetail,
-    RiddleItemSubmissionList,
-    RiddleItemSubmissionDetail
-)
+from .views.user_views import (CreateUserView, LoginView, VerifyUserView)
+from .views.profile_views import (ProfileList,ProfileDetail)
+from .participation_views import (ParticipationsList, ParticipationDetail)
+from .hunt_instance_views import (HuntInstanceList, HuntInstanceDetail)
+from .hunt_template_views import (HuntTemplateList, HuntTemplateDetail)
+from .riddle_item_views import (RiddleItemList, RiddleItemDetail)
+from .item_views import (ItemList, ItemDetail)
+from .riddle_item_submission_views import (RiddleItemSubmissionList, RiddleItemSubmissionDetail)
 
 urlpatterns = [
     # Users
