@@ -65,8 +65,14 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         extra_kwargs = {'url': {'view_name': 'profile-detail', 'lookup_field': 'id'}}
 
 class ParticipationSerializer(serializers.HyperlinkedModelSerializer):
-    profile = ProfileSerializer(read_only=True)
-    hunt_instance = HuntInstanceSerializer(read_only=True)
+    profile = serializers.HyperlinkedRelatedField(
+        view_name='profile-detail', 
+        read_only=True,
+        lookup_field='id')                                              
+    hunt_instance = serializers.HyperlinkedRelatedField(
+        view_name='hunt-instance-detail', 
+        read_only=True,
+        lookup_field='id')
     riddle_item_submissions = RiddleItemSubmissionSerializer(many=True, read_only=True)
 
     class Meta:
