@@ -25,6 +25,7 @@ class ProfileList(generics.ListCreateAPIView):
 
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
   serializer_class = ProfileSerializer
+  permission_classes = [permissions.IsAuthenticated]
   lookup_field = 'id'
 
   def get_queryset(self):

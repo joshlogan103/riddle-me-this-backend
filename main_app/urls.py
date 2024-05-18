@@ -1,7 +1,7 @@
 from django.urls import path
 from .views.user_views import (CreateUserView, LoginView, VerifyUserView)
 from .views.profile_views import (ProfileList,ProfileDetail)
-from .participation_views import (ParticipationsList, ParticipationDetail)
+from .views.participation_views import (ParticipationListByProfile, ParticipationListByHuntInstance, ParticipationCreate, ParticipationDetail)
 from .hunt_instance_views import (HuntInstanceList, HuntInstanceDetail)
 from .hunt_template_views import (HuntTemplateList, HuntTemplateDetail)
 from .riddle_item_views import (RiddleItemList, RiddleItemDetail)
@@ -19,8 +19,10 @@ urlpatterns = [
     path('users/<int:user_id>/profiles/<int:id>/', ProfileDetail.as_view(), name='profile-detail'),
 
     # Participations
-    path('profiles/<int:profile_id>/participations/', ParticipationsList.as_view(), name='participations-list'),
-    path('profiles/<int:profile_id>/participations/<int:participation_id>/', ParticipationDetail.as_view(), name='participation-detail'),
+    path('profiles/<int:profile_id>/participations/', ParticipationListByProfile.as_view(), name='participations-list-by-profile'),
+    path('hunt-instance/<int:hunt_instance_id>/participations/', ParticipationListByHuntInstance.as_view(), name='participations-list-by-hunt-instance'),
+    path('profiles/<int:profile_id>/hunt-instance/<int:hunt_instance_id>/participations/', ParticipationCreate.as_view(), name = 'participation-create'),
+    path('profiles/<int:profile_id>/hunt-instance/<int:hunst_instance_id>/participations/<int:participation_id>/', ParticipationDetail.as_view(), name='participation-detail'),
 
     # Hunt Instances
     path('hunt-templates/<int:hunt_template_id>/hunt-instances/', HuntInstanceList.as_view(), name='hunt-instance-list'),
