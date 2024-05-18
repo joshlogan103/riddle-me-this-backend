@@ -53,3 +53,13 @@ class RiddleItemSerializer(serializers.HyperlinkedModelSerializer):
         model = RiddleItem
         fields = "__all__"
         extra_kwargs = {'url': {'view_name': 'riddle-item-detail', 'lookup_field': 'id'}}
+
+class ProfileSerializer(serializers.HyperlinkedModelSerializer):
+    user = UserSerializer(read_only=True)
+    hunt_instances = HuntInstanceSerializer(many=True, read_only=True)
+    participations = ParticipationSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Profile
+        fields = "__all__"
+        extra_kwargs = {'url': {'view_name': 'profile-detail', 'lookup_field': 'id'}}
