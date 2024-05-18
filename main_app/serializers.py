@@ -22,10 +22,17 @@ class UserSerializer(serializers.ModelSerializer):
 class ScavengerHuntSerializer(serializers.HyperlinkedModelSerializer):
     riddle_items = RiddleItemSerializer(many=True, read_only=True)
     hunt_instances = HuntInstanceSerializer(many=True, read_only=True)
-    
+
     class Meta:
         model = ScavengerHunt
         fields = "__all__"
-        extra_kwargs = {'url': {'view_name': 'scavengerhunt-detail', 'lookup_field': 'id'}}
+        extra_kwargs = {'url': {'view_name': 'scavenger-hunt-detail', 'lookup_field': 'id'}}
 
-    
+class HuntInstanceSerializer(serializers.HyperlinkedModelSerializer):
+    scavenger_hunt = ScavengerHuntSerializer(read_only=True)
+    participations = ParticipationSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = HuntInstance
+        fields = "__all__"
+        extra_kwargs = {'url': {'view_name': 'hunt-instance-detail', 'lookup_field': 'id'}}
