@@ -43,7 +43,7 @@ class HuntInstanceSerializer(serializers.HyperlinkedModelSerializer):
         extra_kwargs = {'url': {'view_name': 'hunt-instance-detail', 'lookup_field': 'id'}}
 
 class RiddleItemSubmissionSerializer(serializers.HyperlinkedModelSerializer):
-    riddle_item = serializers.HyperlinkedRelatedField(read_only=True, view_name='riddleitem-detail')
+    riddle_item = serializers.HyperlinkedRelatedField(read_only=True, view_name='riddle-item-detail')
     participation = serializers.HyperlinkedRelatedField(read_only=True, view_name='participation-detail')
 
     class Meta:
@@ -53,7 +53,7 @@ class RiddleItemSubmissionSerializer(serializers.HyperlinkedModelSerializer):
 
 class ParticipationSerializer(serializers.HyperlinkedModelSerializer):
     profile = serializers.HyperlinkedRelatedField(view_name='profile-detail', read_only=True, lookup_field='id')
-    hunt_instance = serializers.HyperlinkedRelatedField(view_name='huntinstance-detail', read_only=True, lookup_field='id')
+    hunt_instance = serializers.HyperlinkedRelatedField(view_name='hunt-instance-detail', read_only=True, lookup_field='id')
     riddle_item_submissions = RiddleItemSubmissionSerializer(many=True, read_only=True)
 
     class Meta:
@@ -63,7 +63,7 @@ class ParticipationSerializer(serializers.HyperlinkedModelSerializer):
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     user = UserSerializer(read_only=True)
-    hunt_instances = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='huntinstance-detail')
+    hunt_instances = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='hunt-instance-detail')
     participations = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='participation-detail')
 
     class Meta:
@@ -73,8 +73,8 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
 
 class RiddleItemSerializer(serializers.HyperlinkedModelSerializer):
     item = ItemSerializer(read_only=True)
-    scavenger_hunt = serializers.HyperlinkedRelatedField(read_only=True, view_name='scavengerhunt-detail')
-    riddle_item_submissions = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='riddleitemsubmission-detail')
+    scavenger_hunt = serializers.HyperlinkedRelatedField(read_only=True, view_name='scavenger-hunt-detail')
+    riddle_item_submissions = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='riddle-item-submission-detail')
 
     class Meta:
         model = RiddleItem
