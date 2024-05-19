@@ -10,8 +10,8 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from rest_framework.exceptions import ValidationError
 
-from .models import Profile, Participation, HuntInstance, ScavengerHunt
-from .serializers import UserSerializer, ProfileSerializer, ParticipationSerializer, HuntInstanceSerializer, ScavengerHuntSerializer
+from .models import Profile, Participation, HuntInstance, ScavengerHunt,RiddleItem
+from .serializers import UserSerializer, ProfileSerializer, ParticipationSerializer, HuntInstanceSerializer, ScavengerHuntSerializer, RiddleItemSerializer
 
 # Create your views here.
 # CreatUserView, LoginView, VerifyUserView
@@ -151,3 +151,13 @@ class HuntInstanceDetail(generics.RetrieveUpdateDestroyAPIView):
             'hunt_instance': serializer.data,
             'hunt_template': scavenger_hunt_serializer.data
         })
+
+class HuntTemplateList(generics.ListCreateAPIView):
+    serializer_class = ScavengerHuntSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get_queryset(self):
+        return ScavengerHunt.objects.filter(creator = self.request.user)
+    
+    def perform_create(self, serializer):
+        serializer.save(creator = self.request.user)
