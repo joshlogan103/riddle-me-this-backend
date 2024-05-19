@@ -1,8 +1,6 @@
 from django.urls import path
-from .views import CreateUserView, LoginView, VerifyUserView, ProfileList, ProfileDetail, ParticipationListByProfile, ParticipationListByHuntInstance, ParticipationCreate, ParticipationDetail, HuntInstanceList, HuntInstanceDetail, HuntTemplateList, HuntTemplateDetail, RiddleItemList, RiddleItemDetail
+from .views import CreateUserView, LoginView, VerifyUserView, ProfileList, ProfileDetail, ParticipationListByProfile, ParticipationListByHuntInstance, ParticipationCreate, ParticipationDetail, HuntInstanceList, HuntInstanceDetail, HuntTemplateList, HuntTemplateDetail, RiddleItemList, RiddleItemDetail, RiddleItemSubmissionList, RiddleItemSubmissionDetail, ItemList, ItemDetail
 
-# from .item_views import (ItemList, ItemDetail)
-# from .riddle_item_submission_views import (RiddleItemSubmissionList, RiddleItemSubmissionDetail)
 
 urlpatterns = [
     # Users
@@ -32,11 +30,11 @@ urlpatterns = [
     path('hunt-templates/<int:hunt_template_id>/riddle-items/', RiddleItemList.as_view(), name='riddle-item-list'),
     path('hunt-templates/<int:hunt_template_id>/riddle-items/<int:riddle_item_id>/', RiddleItemDetail.as_view(), name='riddle-item-detail'),
 
-    # # Riddle Item Submissions
-    # path('hunt-templates/<int:hunt_template_id>/riddle-items/<int:riddle_item_id>/participations/<int:participation_id>/riddle-item-submissions/', RiddleItemSubmissionList.as_view(), name='riddle-item-submission-list'),
-    # path('hunt-templates/<int:hunt_template_id>/riddle-items/<int:riddle_item_id>/participations/<int:participation_id>/riddle-item-submissions/<int:riddle_item_submission_id>/', RiddleItemSubmissionDetail.as_view(), name='riddle-item-submission-detail'),
+    # Riddle Item Submissions
+    path('hunt-templates/<int:hunt_template_id>/riddle-items/<int:riddle_item_id>/participations/<int:participation_id>/riddle-item-submissions/', RiddleItemSubmissionList.as_view(), name='riddle-item-submission-list'),
+    path('hunt-templates/<int:hunt_template_id>/riddle-items/<int:riddle_item_id>/participations/<int:participation_id>/riddle-item-submissions/<int:riddle_item_submission_id>/', RiddleItemSubmissionDetail.as_view(), name='riddle-item-submission-detail'),
 
-    # # Items
-    # path('items/', ItemList.as_view(), name='item-list'),
-    # path('items/<int:id>/', ItemDetail.as_view(), name='item-detail'),
+    # Items
+    path('items/', ItemList.as_view(), name='item-list'),
+    path('items/<int:id>/', ItemDetail.as_view(), name='item-detail'),
 ]
