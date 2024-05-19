@@ -147,9 +147,13 @@ class HuntInstanceDetail(generics.RetrieveUpdateDestroyAPIView):
         hunt_template = ScavengerHunt.objects.get(id = hunt_template_id)
         scavenger_hunt_serializer = ScavengerHuntSerializer(hunt_template, context = {'request': request})
         
+        riddle_items = RiddleItem.objects.filter(scavenger_hunt = hunt_template_id)
+        riddle_items_serializer = RiddleItemSerializer(riddle_items, many = True, context = {'request': request})
+
         return Response({
             'hunt_instance': serializer.data,
-            'hunt_template': scavenger_hunt_serializer.data
+            'hunt_template': scavenger_hunt_serializer.data,
+            'riddle_items': riddle_items_serializer.data
         })
 
 class HuntTemplateList(generics.ListCreateAPIView):
@@ -171,12 +175,10 @@ class HuntTemplateDetail(generics.RetrieveUpdateDestroyAPIView):
         instance = self.get_object()
         serializer = self.get_serializer(instance, context = {'request': request})
         
-        hunt_template_id = self.kwargs['hunt_template_id']
-        hunt_template = ScavengerHunt.objects.get(id = hunt_template_id)
-        scavenger_hunt_serializer = ScavengerHuntSerializer(hunt_template, context = {'request': request})
-        
+        hunt_instances = HuntInstance.objects.filter(scavenger_hunt = instance.id)
+        hunt_instances_serializer = HuntInstanceSerializer(hunt_instances, many = True, context = {'request': request})
         return Response({
-            'hunt_instance': serializer.data,
-            'hunt_template': scavenger_hunt_serializer.data
+            'hunt_template': serializer.data,
+            'hunt_instances': hunt_instances_serializer.data
         })
    
