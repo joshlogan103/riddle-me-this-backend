@@ -10,8 +10,8 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from rest_framework.exceptions import ValidationError
 
-from .models import Profile, Participation, HuntInstance, ScavengerHunt
-from .serializers import UserSerializer, ProfileSerializer, ParticipationSerializer, HuntInstanceSerializer, ScavengerHuntSerializer
+from .models import Profile, Participation, HuntInstance, ScavengerHunt,RiddleItem
+from .serializers import UserSerializer, ProfileSerializer, ParticipationSerializer, HuntInstanceSerializer, ScavengerHuntSerializer, RiddleItemSerializer
 
 # Create your views here.
 # CreatUserView, LoginView, VerifyUserView
@@ -147,7 +147,62 @@ class HuntInstanceDetail(generics.RetrieveUpdateDestroyAPIView):
         hunt_template = ScavengerHunt.objects.get(id = hunt_template_id)
         scavenger_hunt_serializer = ScavengerHuntSerializer(hunt_template, context = {'request': request})
         
+        riddle_items = RiddleItem.objects.filter(scavenger_hunt = hunt_template_id)
+        riddle_items_serializer = RiddleItemSerializer(riddle_items, many = True, context = {'request': request})
+
         return Response({
             'hunt_instance': serializer.data,
-            'hunt_template': scavenger_hunt_serializer.data
+            'hunt_template': scavenger_hunt_serializer.data,
+            'riddle_items': riddle_items_serializer.data
         })
+
+class HuntTemplateList(generics.ListCreateAPIView):
+    serializer_class = ScavengerHuntSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get_queryset(self):
+        return ScavengerHunt.objects.filter(creator = self.request.user)
+    
+    def perform_create(self, serializer):
+        serializer.save(creator = self.request.user)
+
+class HuntTemplateDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = ScavengerHuntSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    lookup_field = 'id'
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, context = {'request': request})
+        
+        hunt_instances = HuntInstance.objects.filter(scavenger_hunt = instance.id)
+        hunt_instances_serializer = HuntInstanceSerializer(hunt_instances, many = True, context = {'request': request})
+
+        riddle_items = RiddleItem.objects.filter(scavenger_hunt = instance.id)
+        riddle_items_serializer = RiddleItemSerializer(riddle_items, many = True, context = {'request': request})
+
+
+        return Response({
+            'hunt_template': serializer.data,
+            'hunt_instances': hunt_instances_serializer.data,
+            'riddle_items': riddle_items_serializer.data
+        })
+   
+class RiddleItemList(generics.ListCreateAPIView):
+    serializer_class = RiddleItemSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get_queryset(self):
+        scavenger_hunt = self.kwargs['hunt_template_id']
+        return RiddleItem.objects.filter(scavenger_hunt = scavenger_hunt)
+    
+    def perform_create(self, serializer):
+        scavenger_hunt = self.kwargs['hunt_template_id']
+        serializer.save(scavenger_hunt = scavenger_hunt)
+
+class RiddleItemDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = RiddleItemSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    lookup_field = 'id'
+    
+        

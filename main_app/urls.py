@@ -1,10 +1,6 @@
 from django.urls import path
-from .views import CreateUserView, LoginView, VerifyUserView
-from .views import ProfileList, ProfileDetail
-from .views import ParticipationListByProfile, ParticipationListByHuntInstance, ParticipationCreate, ParticipationDetail
-# from .hunt_instance_views import (HuntInstanceList, HuntInstanceDetail)
-# from .hunt_template_views import (HuntTemplateList, HuntTemplateDetail)
-# from .riddle_item_views import (RiddleItemList, RiddleItemDetail)
+from .views import CreateUserView, LoginView, VerifyUserView, ProfileList, ProfileDetail, ParticipationListByProfile, ParticipationListByHuntInstance, ParticipationCreate, ParticipationDetail, HuntInstanceList, HuntInstanceDetail, HuntTemplateList, HuntTemplateDetail, RiddleItemList, RiddleItemDetail
+
 # from .item_views import (ItemList, ItemDetail)
 # from .riddle_item_submission_views import (RiddleItemSubmissionList, RiddleItemSubmissionDetail)
 
@@ -28,13 +24,13 @@ urlpatterns = [
     path('hunt-templates/<int:hunt_template_id>/hunt-instances/', HuntInstanceList.as_view(), name='hunt-instance-list'),
     path('hunt-templates/<int:hunt_template_id>/hunt-instances/<int:hunt_instance_id>/', HuntInstanceDetail.as_view(), name='hunt-instance-detail'),
 
-    # # Hunt Templates
-    # path('hunt-templates/', HuntTemplateList.as_view(), name='hunt-template-list'),
-    # path('hunt-templates/<int:hunt_template_id>/', HuntTemplateDetail.as_view(), name='hunt-template-detail'),
+    # Hunt Templates
+    path('hunt-templates/', HuntTemplateList.as_view(), name='hunt-template-list'),
+    path('hunt-templates/<int:hunt_template_id>/', HuntTemplateDetail.as_view(), name='hunt-template-detail'),
 
-    # # Riddle Items
-    # path('hunt-templates/<int:hunt_template_id>/riddle-items/', RiddleItemList.as_view(), name='riddle-item-list'),
-    # path('hunt-templates/<int:hunt_template_id>/riddle-items/<int:riddle_item_id>/', RiddleItemDetail.as_view(), name='riddle-item-detail'),
+    # Riddle Items
+    path('hunt-templates/<int:hunt_template_id>/riddle-items/', RiddleItemList.as_view(), name='riddle-item-list'),
+    path('hunt-templates/<int:hunt_template_id>/riddle-items/<int:riddle_item_id>/', RiddleItemDetail.as_view(), name='riddle-item-detail'),
 
     # # Riddle Item Submissions
     # path('hunt-templates/<int:hunt_template_id>/riddle-items/<int:riddle_item_id>/participations/<int:participation_id>/riddle-item-submissions/', RiddleItemSubmissionList.as_view(), name='riddle-item-submission-list'),
