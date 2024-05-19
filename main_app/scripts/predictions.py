@@ -10,8 +10,6 @@ model = tf.keras.applications.ResNet50(weights='imagenet')
 def preprocess_image(image_path):
     # Read an image from the specified file path
     image = cv2.imread(image_path)
-    # Print the original shape of the image
-    # print(f"Original image shape: {image.shape}")
 
     # Display the image and let the user select the cropping area
     crop_img = crop_image(image)
@@ -23,21 +21,14 @@ def preprocess_image(image_path):
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
     # Converts the image to a floating-point tensor with values in the range [0, 255]
-    # Adds a new axis to the image array at position 0, converting the shape from (224, 224, 3) to (1, 224, 224, 3)
-    # This is needed because the model expects a batch dimension as the first dimension
     image = np.expand_dims(image, axis=0)
 
     # Preprocesses the image for the ResNet50 model by scaling pixel values appropriately
-    # This function normalizes the input image to the format expected by the pre-trained ResNet50 model
     image = tf.keras.applications.resnet50.preprocess_input(image)
-
-    # Print the preprocessed image shape and its data type
-    # print(f"Preprocessed image shape: {image.shape}, dtype: {image.dtype}")
 
     # Returns the preprocessed image ready for prediction
     return image
 
-# Function to crop images
 def crop_image(image):
     # Define the callback function for mouse events
     def select_roi(event, x, y, flags, param):
@@ -117,19 +108,14 @@ object_name = input("Enter the name of the object you want to check from the lis
 image_path = input("Enter the filename of the photo: ")
 preprocessed_image = preprocess_image(image_path)
 
-# Make predictions
-# The model is trained on the ImageNet dataset, which has 1000 classes
+
 predictions = model.predict(preprocessed_image)
 
-# Decode predictions
-# The decode_predictions function returns a list of (class_name, class_description, score) tuples
 decoded_predictions = decode_predictions(predictions)
 
 # Check if the top predictions match the specified object
-is_object = any(                   # 'any' function returns True if at least one of the conditions is True
-    object_name.lower() ==        # Convert the specified object name to lowercase for case-insensitive comparison
-    pred[1].lower()                # Convert the predicted label to lowercase for case-insensitive comparison
-    for pred in decoded_predictions # Iterate over each prediction in the decoded predictions list
+is_object = any(                   
+    object_name.lower() == pred[1].lower() for pred in decoded_predictions 
 )
 
 if is_object:
