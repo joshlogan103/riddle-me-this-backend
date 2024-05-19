@@ -161,3 +161,22 @@ class HuntTemplateList(generics.ListCreateAPIView):
     
     def perform_create(self, serializer):
         serializer.save(creator = self.request.user)
+
+class HuntTemplateDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = ScavengerHuntSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    lookup_field = 'id'
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, context = {'request': request})
+        
+        hunt_template_id = self.kwargs['hunt_template_id']
+        hunt_template = ScavengerHunt.objects.get(id = hunt_template_id)
+        scavenger_hunt_serializer = ScavengerHuntSerializer(hunt_template, context = {'request': request})
+        
+        return Response({
+            'hunt_instance': serializer.data,
+            'hunt_template': scavenger_hunt_serializer.data
+        })
+   
