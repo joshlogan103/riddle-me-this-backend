@@ -24,9 +24,9 @@ urlpatterns = [
     path('profiles/<int:profile_id>/hunt-instance/<int:hunt_instance_id>/participations/', ParticipationCreate.as_view(), name = 'participation-create'),
     path('profiles/<int:profile_id>/hunt-instance/<int:hunt_instance_id>/participations/<int:participation_id>/', ParticipationDetail.as_view(), name='participation-detail'),
 
-    # # Hunt Instances
-    # path('hunt-templates/<int:hunt_template_id>/hunt-instances/', HuntInstanceList.as_view(), name='hunt-instance-list'),
-    # path('hunt-templates/<int:hunt_template_id>/hunt-instances/<int:hunt_instance_id>/', HuntInstanceDetail.as_view(), name='hunt-instance-detail'),
+    # Hunt Instances
+    path('hunt-templates/<int:hunt_template_id>/hunt-instances/', HuntInstanceList.as_view(), name='hunt-instance-list'),
+    path('hunt-templates/<int:hunt_template_id>/hunt-instances/<int:hunt_instance_id>/', HuntInstanceDetail.as_view(), name='hunt-instance-detail'),
 
     # # Hunt Templates
     # path('hunt-templates/', HuntTemplateList.as_view(), name='hunt-template-list'),

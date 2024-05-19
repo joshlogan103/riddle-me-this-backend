@@ -10,8 +10,8 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from rest_framework.exceptions import ValidationError
 
-from .models import Profile, Participation
-from .serializers import UserSerializer, ProfileSerializer, ParticipationSerializer
+from .models import Profile, Participation, HuntInstance, ScavengerHunt
+from .serializers import UserSerializer, ProfileSerializer, ParticipationSerializer, HuntInstanceSerializer, ScavengerHuntSerializer
 
 # Create your views here.
 # CreatUserView, LoginView, VerifyUserView
@@ -78,10 +78,6 @@ class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = 'id'
 
-    def get_queryset(self):
-        user = self.request.user
-        return Profile.objects.filter(user=user)
-
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance, context = {'request': request})
@@ -125,6 +121,33 @@ class ParticipationDetail(generics.RetrieveUpdateDestroyAPIView):
   lookup_field = 'id'
 
 
+class HuntInstanceList(generics.ListCreateAPIView):
+    serializer_class = HuntInstanceSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get_queryset(self):
+       hunt_template = self.kwargs['hunt_template_id']
+       return ScavengerHunt.objects.filter(scavenger_hunt = hunt_template)
+    
+    def perform_create(self, serializer):
+        hunt_template = self.kwargs['hunt_template_id']
+        serializer.save(scavenger_hunt = hunt_template)
+        
 
-
-
+class HuntInstanceDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = HuntInstanceSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    lookup_field = 'id'
+    
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, context = {'request': request})
+        
+        hunt_template_id = self.kwargs['hunt_template_id']
+        hunt_template = ScavengerHunt.objects.get(id = hunt_template_id)
+        scavenger_hunt_serializer = ScavengerHuntSerializer(hunt_template, context = {'request': request})
+        
+        return Response({
+            'hunt_instance': serializer.data,
+            'hunt_template': scavenger_hunt_serializer.data
+        })
