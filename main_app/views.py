@@ -10,8 +10,8 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from rest_framework.exceptions import ValidationError
 
-from .models import Profile, Participation, HuntInstance, ScavengerHunt,RiddleItem
-from .serializers import UserSerializer, ProfileSerializer, ParticipationSerializer, HuntInstanceSerializer, ScavengerHuntSerializer, RiddleItemSerializer
+from .models import Profile, Participation, HuntInstance, ScavengerHunt,RiddleItem, RiddleItemSubmission, Item
+from .serializers import UserSerializer, ProfileSerializer, ParticipationSerializer, HuntInstanceSerializer, ScavengerHuntSerializer, RiddleItemSerializer, RiddleItemSubmissionSerializer, ItemSerializer
 
 # Create your views here.
 # CreatUserView, LoginView, VerifyUserView
@@ -205,4 +205,49 @@ class RiddleItemDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = 'id'
     
+class RiddleItemSubmissionList(generics.ListCreateAPIView):
+    serializer_class = RiddleItemSubmissionSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get_queryset(self):
+        riddle_item = self.kwargs['riddle_item_id']
+        participation = self.kwargs['participation_id']
+        return RiddleItemSubmission.objects.filter(riddle_item = riddle_item, participation = participation)
+    
+    def perform_create(self, serializer):
+        riddle_item = self.kwargs['riddle_item_id']
+        participation = self.kwargs['participation_id']
+        serializer.save(riddle_item = riddle_item, participation = participation)
+
+class RiddleItemSubmissionDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = RiddleItemSubmissionSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    lookup_field = 'id'
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, context = {'request': request})
         
+        riddle_item_id = self.kwargs['riddle_item_id']
+        riddle_item = RiddleItem.objects.get(id = riddle_item_id)
+        riddle_item_serializer = RiddleItemSerializer(riddle_item, context = {'request': request})
+
+        participation_id = self.kwargs['participation_id']
+        participation = Participation.objects.get(id = participation_id)
+        participation_serializer = ParticipationSerializer(participation, context = {'request': request})
+
+        return Response({
+            'riddle_item_submission': serializer.data,
+            'riddle_item': riddle_item_serializer.data,
+            'participation': participation_serializer.data
+        })
+    
+class ItemList(generics.ListCreateAPIView):
+    serializer_class = ItemSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = ItemSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    lookup_field = 'id'
+
