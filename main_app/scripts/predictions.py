@@ -16,6 +16,9 @@ def preprocess_image(image_path):
 
     # Converts the image from BGR color space (default in OpenCV) to RGB color space
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    
+    # TODO Check if this works
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     # Converts the image to a floating-point tensor with values in the range [0, 255]
     image = np.expand_dims(image, axis=0)
