@@ -26,17 +26,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
+# TODO: REMOVE ME FOR DEPLOYMENT
 # SECRET_KEY = 'django-insecure-l7l3!u%63or90dl#s=xp4__lbc(=qu)^2z2h&1@$s79cuylw0+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.herokuapp.com']
 
+# TODO: ADD ME BACK FOR DEPLOYMENT
+# 
 # Initialise environment variables
 env = environ.Env()
 environ.Env.read_env()
 
-# Environmen variables
+# TODO: ADD ME BACK FOR DEPLOYMENT
+
+# # Environmen variables
 DATABASE_URL=env('DATABASE_URL')
 SECRET_KEY=env('SECRET_KEY')
 
@@ -105,12 +111,16 @@ WSGI_APPLICATION = 'Riddle_Me_This.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# TODO: REMOVE ME FOR DEPLOYMENT
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'riddle_me_this',
 #     }
 # }
+
+# TODO: ADD ME BACK FOR DEPLOYMENT
 
 DATABASES = {
     'default': 

@@ -1,0 +1,4002 @@
+[
+    {
+        "category": "arachnid",
+        "name": "barn_spider"
+    },
+    {
+        "category": "arachnid",
+        "name": "black_and_gold_garden_spider"
+    },
+    {
+        "category": "arachnid",
+        "name": "black_widow"
+    },
+    {
+        "category": "arachnid",
+        "name": "garden_spider"
+    },
+    {
+        "category": "arachnid",
+        "name": "harvestman"
+    },
+    {
+        "category": "arachnid",
+        "name": "scorpion"
+    },
+    {
+        "category": "arachnid",
+        "name": "tarantula"
+    },
+    {
+        "category": "arachnid",
+        "name": "wolf_spider"
+    },
+    {
+        "category": "armadillo",
+        "name": "armadillo"
+    },
+    {
+        "category": "bear",
+        "name": "American_black_bear"
+    },
+    {
+        "category": "bear",
+        "name": "brown_bear"
+    },
+    {
+        "category": "bear",
+        "name": "ice_bear"
+    },
+    {
+        "category": "bear",
+        "name": "giant_panda"
+    },
+    {
+        "category": "bear",
+        "name": "lesser_panda"
+    },
+    {
+        "category": "bird",
+        "name": "African_grey"
+    },
+    {
+        "category": "bird",
+        "name": "American_coot"
+    },
+    {
+        "category": "bird",
+        "name": "American_egret"
+    },
+    {
+        "category": "bird",
+        "name": "European_gallinule"
+    },
+    {
+        "category": "bird",
+        "name": "albatross"
+    },
+    {
+        "category": "bird",
+        "name": "bald_eagle"
+    },
+    {
+        "category": "bird",
+        "name": "bee_eater"
+    },
+    {
+        "category": "bird",
+        "name": "bittern"
+    },
+    {
+        "category": "bird",
+        "name": "black_grouse"
+    },
+    {
+        "category": "bird",
+        "name": "black_stork"
+    },
+    {
+        "category": "bird",
+        "name": "black_swan"
+    },
+    {
+        "category": "bird",
+        "name": "brambling"
+    },
+    {
+        "category": "bird",
+        "name": "bulbul"
+    },
+    {
+        "category": "bird",
+        "name": "bustard"
+    },
+    {
+        "category": "bird",
+        "name": "chickadee"
+    },
+    {
+        "category": "bird",
+        "name": "cock"
+    },
+    {
+        "category": "bird",
+        "name": "coucal"
+    },
+    {
+        "category": "bird",
+        "name": "crane (bird)"
+    },
+    {
+        "category": "bird",
+        "name": "dowitcher"
+    },
+    {
+        "category": "bird",
+        "name": "drake"
+    },
+    {
+        "category": "bird",
+        "name": "flamingo"
+    },
+    {
+        "category": "bird",
+        "name": "goldfinch"
+    },
+    {
+        "category": "bird",
+        "name": "goose"
+    },
+    {
+        "category": "bird",
+        "name": "great_grey_owl"
+    },
+    {
+        "category": "bird",
+        "name": "hen"
+    },
+    {
+        "category": "bird",
+        "name": "hornbill"
+    },
+    {
+        "category": "bird",
+        "name": "house_finch"
+    },
+    {
+        "category": "bird",
+        "name": "hummingbird"
+    },
+    {
+        "category": "bird",
+        "name": "indigo_bunting"
+    },
+    {
+        "category": "bird",
+        "name": "jacamar"
+    },
+    {
+        "category": "bird",
+        "name": "jay"
+    },
+    {
+        "category": "bird",
+        "name": "junco"
+    },
+    {
+        "category": "bird",
+        "name": "king_penguin"
+    },
+    {
+        "category": "bird",
+        "name": "kite"
+    },
+    {
+        "category": "bird",
+        "name": "limpkin"
+    },
+    {
+        "category": "bird",
+        "name": "little_blue_heron"
+    },
+    {
+        "category": "bird",
+        "name": "lorikeet"
+    },
+    {
+        "category": "bird",
+        "name": "macaw"
+    },
+    {
+        "category": "bird",
+        "name": "magpie"
+    },
+    {
+        "category": "bird",
+        "name": "ostrich"
+    },
+    {
+        "category": "bird",
+        "name": "oystercatcher"
+    },
+    {
+        "category": "bird",
+        "name": "partridge"
+    },
+    {
+        "category": "bird",
+        "name": "peacock"
+    },
+    {
+        "category": "bird",
+        "name": "pelican"
+    },
+    {
+        "category": "bird",
+        "name": "prairie_chicken"
+    },
+    {
+        "category": "bird",
+        "name": "ptarmigan"
+    },
+    {
+        "category": "bird",
+        "name": "quail"
+    },
+    {
+        "category": "bird",
+        "name": "red-backed_sandpiper"
+    },
+    {
+        "category": "bird",
+        "name": "red-breasted_merganser"
+    },
+    {
+        "category": "bird",
+        "name": "redshank"
+    },
+    {
+        "category": "bird",
+        "name": "robin"
+    },
+    {
+        "category": "bird",
+        "name": "ruddy_turnstone"
+    },
+    {
+        "category": "bird",
+        "name": "ruffed_grouse"
+    },
+    {
+        "category": "bird",
+        "name": "spoonbill"
+    },
+    {
+        "category": "bird",
+        "name": "sulphur-crested_cockatoo"
+    },
+    {
+        "category": "bird",
+        "name": "toucan"
+    },
+    {
+        "category": "bird",
+        "name": "vulture"
+    },
+    {
+        "category": "bird",
+        "name": "water_ouzel"
+    },
+    {
+        "category": "bird",
+        "name": "white_stork"
+    },
+    {
+        "category": "bug",
+        "name": "ant"
+    },
+    {
+        "category": "bug",
+        "name": "bee"
+    },
+    {
+        "category": "bug",
+        "name": "centipede"
+    },
+    {
+        "category": "bug",
+        "name": "cicada"
+    },
+    {
+        "category": "bug",
+        "name": "cockroach"
+    },
+    {
+        "category": "bug",
+        "name": "cricket"
+    },
+    {
+        "category": "bug",
+        "name": "damselfly"
+    },
+    {
+        "category": "bug",
+        "name": "dragonfly"
+    },
+    {
+        "category": "bug",
+        "name": "flatworm"
+    },
+    {
+        "category": "bug",
+        "name": "fly"
+    },
+    {
+        "category": "bug",
+        "name": "grasshopper"
+    },
+    {
+        "category": "bug",
+        "name": "ground_beetle"
+    },
+    {
+        "category": "bug",
+        "name": "lacewing"
+    },
+    {
+        "category": "bug",
+        "name": "ladybug"
+    },
+    {
+        "category": "bug",
+        "name": "long-horned_beetle"
+    },
+    {
+        "category": "bug",
+        "name": "mantis"
+    },
+    {
+        "category": "bug",
+        "name": "nematode"
+    },
+    {
+        "category": "bug",
+        "name": "rhinoceros_beetle"
+    },
+    {
+        "category": "bug",
+        "name": "tick"
+    },
+    {
+        "category": "bug",
+        "name": "tiger_beetle"
+    },
+    {
+        "category": "bug",
+        "name": "weevil"
+    },
+    {
+        "category": "bug",
+        "name": "dung_beetle"
+    },
+    {
+        "category": "bug",
+        "name": "leaf_beetle"
+    },
+    {
+        "category": "bug",
+        "name": "leafhopper"
+    },
+    {
+        "category": "bug",
+        "name": "walking_stick"
+    },
+    {
+        "category": "butterfly",
+        "name": "admiral"
+    },
+    {
+        "category": "butterfly",
+        "name": "cabbage_butterfly"
+    },
+    {
+        "category": "butterfly",
+        "name": "lycaenid"
+    },
+    {
+        "category": "butterfly",
+        "name": "monarch"
+    },
+    {
+        "category": "butterfly",
+        "name": "ringlet"
+    },
+    {
+        "category": "butterfly",
+        "name": "sulphur_butterfly"
+    },
+    {
+        "category": "cat",
+        "name": "Egyptian_cat"
+    },
+    {
+        "category": "cat",
+        "name": "Persian_cat"
+    },
+    {
+        "category": "cat",
+        "name": "Siamese_cat"
+    },
+    {
+        "category": "cat",
+        "name": "tabby"
+    },
+    {
+        "category": "coral",
+        "name": "brain_coral"
+    },
+    {
+        "category": "coral",
+        "name": "coral_fungus"
+    },
+    {
+        "category": "coral",
+        "name": "coral_reef"
+    },
+    {
+        "category": "coral",
+        "name": "rock_beauty"
+    },
+    {
+        "category": "coral",
+        "name": "sea_anemone"
+    },
+    {
+        "category": "crocodile",
+        "name": "African_crocodile"
+    },
+    {
+        "category": "crocodile",
+        "name": "American_alligator"
+    },
+    {
+        "category": "crustacean",
+        "name": "American_lobster"
+    },
+    {
+        "category": "crustacean",
+        "name": "Dungeness_crab"
+    },
+    {
+        "category": "crustacean",
+        "name": "crayfish"
+    },
+    {
+        "category": "crustacean",
+        "name": "fiddler_crab"
+    },
+    {
+        "category": "crustacean",
+        "name": "hermit_crab"
+    },
+    {
+        "category": "crustacean",
+        "name": "isopod"
+    },
+    {
+        "category": "crustacean",
+        "name": "king_crab"
+    },
+    {
+        "category": "crustacean",
+        "name": "rock_crab"
+    },
+    {
+        "category": "crustacean",
+        "name": "spiny_lobster"
+    },
+    {
+        "category": "dinosaur",
+        "name": "triceratops"
+    },
+    {
+        "category": "dog",
+        "name": "Afghan_hound"
+    },
+    {
+        "category": "dog",
+        "name": "African_hunting_dog"
+    },
+    {
+        "category": "dog",
+        "name": "Airedale"
+    },
+    {
+        "category": "dog",
+        "name": "American_Staffordshire_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "Appenzeller"
+    },
+    {
+        "category": "dog",
+        "name": "Australian_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "Bedlington_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "Bernese_mountain_dog"
+    },
+    {
+        "category": "dog",
+        "name": "Blenheim_spaniel"
+    },
+    {
+        "category": "dog",
+        "name": "Border_collie"
+    },
+    {
+        "category": "dog",
+        "name": "Border_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "Boston_bull"
+    },
+    {
+        "category": "dog",
+        "name": "Bouvier_des_Flandres"
+    },
+    {
+        "category": "dog",
+        "name": "Brabancon_griffon"
+    },
+    {
+        "category": "dog",
+        "name": "Brittany_spaniel"
+    },
+    {
+        "category": "dog",
+        "name": "Cardigan"
+    },
+    {
+        "category": "dog",
+        "name": "Chesapeake_Bay_retriever"
+    },
+    {
+        "category": "dog",
+        "name": "Chihuahua"
+    },
+    {
+        "category": "dog",
+        "name": "Dandie_Dinmont"
+    },
+    {
+        "category": "dog",
+        "name": "Doberman"
+    },
+    {
+        "category": "dog",
+        "name": "English_foxhound"
+    },
+    {
+        "category": "dog",
+        "name": "English_setter"
+    },
+    {
+        "category": "dog",
+        "name": "English_springer"
+    },
+    {
+        "category": "dog",
+        "name": "EntleBucher"
+    },
+    {
+        "category": "dog",
+        "name": "Eskimo_dog"
+    },
+    {
+        "category": "dog",
+        "name": "French_bulldog"
+    },
+    {
+        "category": "dog",
+        "name": "German_shepherd"
+    },
+    {
+        "category": "dog",
+        "name": "German_short-haired_pointer"
+    },
+    {
+        "category": "dog",
+        "name": "Gordon_setter"
+    },
+    {
+        "category": "dog",
+        "name": "Great_Dane"
+    },
+    {
+        "category": "dog",
+        "name": "Great_Pyrenees"
+    },
+    {
+        "category": "dog",
+        "name": "Greater_Swiss_Mountain_dog"
+    },
+    {
+        "category": "dog",
+        "name": "Ibizan_hound"
+    },
+    {
+        "category": "dog",
+        "name": "Irish_setter"
+    },
+    {
+        "category": "dog",
+        "name": "Irish_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "Irish_water_spaniel"
+    },
+    {
+        "category": "dog",
+        "name": "Irish_wolfhound"
+    },
+    {
+        "category": "dog",
+        "name": "Italian_greyhound"
+    },
+    {
+        "category": "dog",
+        "name": "Japanese_spaniel"
+    },
+    {
+        "category": "dog",
+        "name": "Kerry_blue_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "Labrador_retriever"
+    },
+    {
+        "category": "dog",
+        "name": "Lakeland_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "Leonberg"
+    },
+    {
+        "category": "dog",
+        "name": "Lhasa"
+    },
+    {
+        "category": "dog",
+        "name": "Maltese_dog"
+    },
+    {
+        "category": "dog",
+        "name": "Mexican_hairless"
+    },
+    {
+        "category": "dog",
+        "name": "Newfoundland"
+    },
+    {
+        "category": "dog",
+        "name": "Norfolk_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "Norwegian_elkhound"
+    },
+    {
+        "category": "dog",
+        "name": "Norwich_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "Old_English_sheepdog"
+    },
+    {
+        "category": "dog",
+        "name": "Pekinese"
+    },
+    {
+        "category": "dog",
+        "name": "Pembroke"
+    },
+    {
+        "category": "dog",
+        "name": "Pomeranian"
+    },
+    {
+        "category": "dog",
+        "name": "Rhodesian_ridgeback"
+    },
+    {
+        "category": "dog",
+        "name": "Rottweiler"
+    },
+    {
+        "category": "dog",
+        "name": "Saint_Bernard"
+    },
+    {
+        "category": "dog",
+        "name": "Saluki"
+    },
+    {
+        "category": "dog",
+        "name": "Samoyed"
+    },
+    {
+        "category": "dog",
+        "name": "Scotch_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "Scottish_deerhound"
+    },
+    {
+        "category": "dog",
+        "name": "Sealyham_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "Shetland_sheepdog"
+    },
+    {
+        "category": "dog",
+        "name": "Shih-Tzu"
+    },
+    {
+        "category": "dog",
+        "name": "Siberian_husky"
+    },
+    {
+        "category": "dog",
+        "name": "Staffordshire_bullterrier"
+    },
+    {
+        "category": "dog",
+        "name": "Sussex_spaniel"
+    },
+    {
+        "category": "dog",
+        "name": "Tibetan_mastiff"
+    },
+    {
+        "category": "dog",
+        "name": "Tibetan_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "Walker_hound"
+    },
+    {
+        "category": "dog",
+        "name": "Weimaraner"
+    },
+    {
+        "category": "dog",
+        "name": "Welsh_springer_spaniel"
+    },
+    {
+        "category": "dog",
+        "name": "West_Highland_white_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "Yorkshire_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "affenpinscher"
+    },
+    {
+        "category": "dog",
+        "name": "basenji"
+    },
+    {
+        "category": "dog",
+        "name": "basset"
+    },
+    {
+        "category": "dog",
+        "name": "beagle"
+    },
+    {
+        "category": "dog",
+        "name": "black-and-tan_coonhound"
+    },
+    {
+        "category": "dog",
+        "name": "bloodhound"
+    },
+    {
+        "category": "dog",
+        "name": "bluetick"
+    },
+    {
+        "category": "dog",
+        "name": "borzoi"
+    },
+    {
+        "category": "dog",
+        "name": "boxer"
+    },
+    {
+        "category": "dog",
+        "name": "briard"
+    },
+    {
+        "category": "dog",
+        "name": "bull_mastiff"
+    },
+    {
+        "category": "dog",
+        "name": "cairn"
+    },
+    {
+        "category": "dog",
+        "name": "chow"
+    },
+    {
+        "category": "dog",
+        "name": "clumber"
+    },
+    {
+        "category": "dog",
+        "name": "cocker_spaniel"
+    },
+    {
+        "category": "dog",
+        "name": "collie"
+    },
+    {
+        "category": "dog",
+        "name": "curly-coated_retriever"
+    },
+    {
+        "category": "dog",
+        "name": "dalmatian"
+    },
+    {
+        "category": "dog",
+        "name": "flat-coated_retriever"
+    },
+    {
+        "category": "dog",
+        "name": "giant_schnauzer"
+    },
+    {
+        "category": "dog",
+        "name": "golden_retriever"
+    },
+    {
+        "category": "dog",
+        "name": "groenendael"
+    },
+    {
+        "category": "dog",
+        "name": "keeshond"
+    },
+    {
+        "category": "dog",
+        "name": "kelpie"
+    },
+    {
+        "category": "dog",
+        "name": "komondor"
+    },
+    {
+        "category": "dog",
+        "name": "kuvasz"
+    },
+    {
+        "category": "dog",
+        "name": "malamute"
+    },
+    {
+        "category": "dog",
+        "name": "malinois"
+    },
+    {
+        "category": "dog",
+        "name": "miniature_pinscher"
+    },
+    {
+        "category": "dog",
+        "name": "miniature_poodle"
+    },
+    {
+        "category": "dog",
+        "name": "miniature_schnauzer"
+    },
+    {
+        "category": "dog",
+        "name": "otterhound"
+    },
+    {
+        "category": "dog",
+        "name": "papillon"
+    },
+    {
+        "category": "dog",
+        "name": "pug"
+    },
+    {
+        "category": "dog",
+        "name": "redbone"
+    },
+    {
+        "category": "dog",
+        "name": "schipperke"
+    },
+    {
+        "category": "dog",
+        "name": "silky_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "soft-coated_wheaten_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "standard_poodle"
+    },
+    {
+        "category": "dog",
+        "name": "standard_schnauzer"
+    },
+    {
+        "category": "dog",
+        "name": "toy_poodle"
+    },
+    {
+        "category": "dog",
+        "name": "toy_terrier"
+    },
+    {
+        "category": "dog",
+        "name": "vizsla"
+    },
+    {
+        "category": "dog",
+        "name": "whippet"
+    },
+    {
+        "category": "dog",
+        "name": "wire-haired_fox_terrier"
+    },
+    {
+        "category": "echinoderms",
+        "name": "sea_cucumber"
+    },
+    {
+        "category": "echinoderms",
+        "name": "sea_urchin"
+    },
+    {
+        "category": "echinoderms",
+        "name": "starfish"
+    },
+    {
+        "category": "ferret",
+        "name": "badger"
+    },
+    {
+        "category": "ferret",
+        "name": "black-footed_ferret"
+    },
+    {
+        "category": "ferret",
+        "name": "mink"
+    },
+    {
+        "category": "ferret",
+        "name": "otter"
+    },
+    {
+        "category": "ferret",
+        "name": "polecat"
+    },
+    {
+        "category": "ferret",
+        "name": "skunk"
+    },
+    {
+        "category": "ferret",
+        "name": "weasel"
+    },
+    {
+        "category": "fish",
+        "name": "anemone_fish"
+    },
+    {
+        "category": "fish",
+        "name": "barracouta"
+    },
+    {
+        "category": "fish",
+        "name": "eel"
+    },
+    {
+        "category": "fish",
+        "name": "electric_ray"
+    },
+    {
+        "category": "fish",
+        "name": "gar"
+    },
+    {
+        "category": "fish",
+        "name": "goldfish"
+    },
+    {
+        "category": "fish",
+        "name": "lionfish"
+    },
+    {
+        "category": "fish",
+        "name": "puffer"
+    },
+    {
+        "category": "fish",
+        "name": "sea_snake"
+    },
+    {
+        "category": "fish",
+        "name": "sturgeon"
+    },
+    {
+        "category": "fish",
+        "name": "tench"
+    },
+    {
+        "category": "fish",
+        "name": "jellyfish"
+    },
+    {
+        "category": "fish",
+        "name": "stingray"
+    },
+    {
+        "category": "flower",
+        "name": "cardoon"
+    },
+    {
+        "category": "flower",
+        "name": "daisy"
+    },
+    {
+        "category": "flower",
+        "name": "hip"
+    },
+    {
+        "category": "flower",
+        "name": "rapeseed"
+    },
+    {
+        "category": "flower",
+        "name": "yellow_lady's_slipper"
+    },
+    {
+        "category": "frog",
+        "name": "bullfrog"
+    },
+    {
+        "category": "frog",
+        "name": "tailed_frog"
+    },
+    {
+        "category": "frog",
+        "name": "tree_frog"
+    },
+    {
+        "category": "fruit",
+        "name": "Granny_Smith"
+    },
+    {
+        "category": "fruit",
+        "name": "acorn_squash"
+    },
+    {
+        "category": "fruit",
+        "name": "banana"
+    },
+    {
+        "category": "fruit",
+        "name": "custard_apple"
+    },
+    {
+        "category": "fruit",
+        "name": "fig"
+    },
+    {
+        "category": "fruit",
+        "name": "jack-o'-lantern"
+    },
+    {
+        "category": "fruit",
+        "name": "jackfruit"
+    },
+    {
+        "category": "fruit",
+        "name": "lemon"
+    },
+    {
+        "category": "fruit",
+        "name": "orange"
+    },
+    {
+        "category": "fruit",
+        "name": "pineapple"
+    },
+    {
+        "category": "fruit",
+        "name": "pomegranate"
+    },
+    {
+        "category": "fruit",
+        "name": "spaghetti_squash"
+    },
+    {
+        "category": "fruit",
+        "name": "strawberry"
+    },
+    {
+        "category": "fruit",
+        "name": "zucchini"
+    },
+    {
+        "category": "fungus",
+        "name": "agaric"
+    },
+    {
+        "category": "fungus",
+        "name": "bolete"
+    },
+    {
+        "category": "fungus",
+        "name": "earthstar"
+    },
+    {
+        "category": "fungus",
+        "name": "gyromitra"
+    },
+    {
+        "category": "fungus",
+        "name": "hen-of-the-woods"
+    },
+    {
+        "category": "fungus",
+        "name": "mushroom"
+    },
+    {
+        "category": "fungus",
+        "name": "stinkhorn"
+    },
+    {
+        "category": "hog",
+        "name": "hog"
+    },
+    {
+        "category": "hog",
+        "name": "warthog"
+    },
+    {
+        "category": "hog",
+        "name": "wild_boar"
+    },
+    {
+        "category": "lizard",
+        "name": "African_chameleon"
+    },
+    {
+        "category": "lizard",
+        "name": "American_chameleon"
+    },
+    {
+        "category": "lizard",
+        "name": "Gila_monster"
+    },
+    {
+        "category": "lizard",
+        "name": "Komodo_dragon"
+    },
+    {
+        "category": "lizard",
+        "name": "agama"
+    },
+    {
+        "category": "lizard",
+        "name": "alligator_lizard"
+    },
+    {
+        "category": "lizard",
+        "name": "banded_gecko"
+    },
+    {
+        "category": "lizard",
+        "name": "common_iguana"
+    },
+    {
+        "category": "lizard",
+        "name": "frilled_lizard"
+    },
+    {
+        "category": "lizard",
+        "name": "green_lizard"
+    },
+    {
+        "category": "lizard",
+        "name": "whiptail"
+    },
+    {
+        "category": "marine mammals",
+        "name": "dugong"
+    },
+    {
+        "category": "marine mammals",
+        "name": "sea_lion"
+    },
+    {
+        "category": "marine mammals",
+        "name": "grey_whale"
+    },
+    {
+        "category": "marine mammals",
+        "name": "killer_whale"
+    },
+    {
+        "category": "marsupial",
+        "name": "koala"
+    },
+    {
+        "category": "marsupial",
+        "name": "wallaby"
+    },
+    {
+        "category": "marsupial",
+        "name": "wombat"
+    },
+    {
+        "category": "mollusk",
+        "name": "chambered_nautilus"
+    },
+    {
+        "category": "mollusk",
+        "name": "chiton"
+    },
+    {
+        "category": "mollusk",
+        "name": "conch"
+    },
+    {
+        "category": "mollusk",
+        "name": "sea_slug"
+    },
+    {
+        "category": "mollusk",
+        "name": "slug"
+    },
+    {
+        "category": "mollusk",
+        "name": "snail"
+    },
+    {
+        "category": "mongoose",
+        "name": "Madagascar_cat"
+    },
+    {
+        "category": "mongoose",
+        "name": "meerkat"
+    },
+    {
+        "category": "mongoose",
+        "name": "mongoose"
+    },
+    {
+        "category": "monotreme",
+        "name": "echidna"
+    },
+    {
+        "category": "monotreme",
+        "name": "platypus"
+    },
+    {
+        "category": "person",
+        "name": "ballplayer"
+    },
+    {
+        "category": "person",
+        "name": "groom"
+    },
+    {
+        "category": "person",
+        "name": "pirate"
+    },
+    {
+        "category": "person",
+        "name": "scuba_diver"
+    },
+    {
+        "category": "plant",
+        "name": "acorn"
+    },
+    {
+        "category": "plant",
+        "name": "buckeye"
+    },
+    {
+        "category": "plant",
+        "name": "sorrel"
+    },
+    {
+        "category": "primate",
+        "name": "baboon"
+    },
+    {
+        "category": "primate",
+        "name": "capuchin"
+    },
+    {
+        "category": "primate",
+        "name": "chimpanzee"
+    },
+    {
+        "category": "primate",
+        "name": "colobus"
+    },
+    {
+        "category": "primate",
+        "name": "gibbon"
+    },
+    {
+        "category": "primate",
+        "name": "gorilla"
+    },
+    {
+        "category": "primate",
+        "name": "guenon"
+    },
+    {
+        "category": "primate",
+        "name": "howler_monkey"
+    },
+    {
+        "category": "primate",
+        "name": "indri"
+    },
+    {
+        "category": "primate",
+        "name": "langur"
+    },
+    {
+        "category": "primate",
+        "name": "macaque"
+    },
+    {
+        "category": "primate",
+        "name": "marmoset"
+    },
+    {
+        "category": "primate",
+        "name": "orangutan"
+    },
+    {
+        "category": "primate",
+        "name": "patas"
+    },
+    {
+        "category": "primate",
+        "name": "proboscis_monkey"
+    },
+    {
+        "category": "primate",
+        "name": "siamang"
+    },
+    {
+        "category": "primate",
+        "name": "spider_monkey"
+    },
+    {
+        "category": "primate",
+        "name": "squirrel_monkey"
+    },
+    {
+        "category": "primate",
+        "name": "titi"
+    },
+    {
+        "category": "rabbit",
+        "name": "Angora"
+    },
+    {
+        "category": "rabbit",
+        "name": "hare"
+    },
+    {
+        "category": "rabbit",
+        "name": "wood_rabbit"
+    },
+    {
+        "category": "rodent",
+        "name": "beaver"
+    },
+    {
+        "category": "rodent",
+        "name": "fox_squirrel"
+    },
+    {
+        "category": "rodent",
+        "name": "guinea_pig"
+    },
+    {
+        "category": "rodent",
+        "name": "hamster"
+    },
+    {
+        "category": "rodent",
+        "name": "marmot"
+    },
+    {
+        "category": "rodent",
+        "name": "mouse"
+    },
+    {
+        "category": "rodent",
+        "name": "porcupine"
+    },
+    {
+        "category": "salamander",
+        "name": "European_fire_salamander"
+    },
+    {
+        "category": "salamander",
+        "name": "axolotl"
+    },
+    {
+        "category": "salamander",
+        "name": "common_newt"
+    },
+    {
+        "category": "salamander",
+        "name": "eft"
+    },
+    {
+        "category": "salamander",
+        "name": "spotted_salamander"
+    },
+    {
+        "category": "shark",
+        "name": "coho"
+    },
+    {
+        "category": "shark",
+        "name": "great_white_shark"
+    },
+    {
+        "category": "shark",
+        "name": "hammerhead"
+    },
+    {
+        "category": "shark",
+        "name": "tiger_shark"
+    },
+    {
+        "category": "sloth",
+        "name": "sloth_bear"
+    },
+    {
+        "category": "sloth",
+        "name": "three-toed_sloth"
+    },
+    {
+        "category": "snake",
+        "name": "Indian_cobra"
+    },
+    {
+        "category": "snake",
+        "name": "boa_constrictor"
+    },
+    {
+        "category": "snake",
+        "name": "diamondback"
+    },
+    {
+        "category": "snake",
+        "name": "garter_snake"
+    },
+    {
+        "category": "snake",
+        "name": "green_mamba"
+    },
+    {
+        "category": "snake",
+        "name": "green_snake"
+    },
+    {
+        "category": "snake",
+        "name": "hognose_snake"
+    },
+    {
+        "category": "snake",
+        "name": "horned_viper"
+    },
+    {
+        "category": "snake",
+        "name": "king_snake"
+    },
+    {
+        "category": "snake",
+        "name": "night_snake"
+    },
+    {
+        "category": "snake",
+        "name": "ringneck_snake"
+    },
+    {
+        "category": "snake",
+        "name": "rock_python"
+    },
+    {
+        "category": "snake",
+        "name": "sidewinder"
+    },
+    {
+        "category": "snake",
+        "name": "thunder_snake"
+    },
+    {
+        "category": "snake",
+        "name": "vine_snake"
+    },
+    {
+        "category": "snake",
+        "name": "water_snake"
+    },
+    {
+        "category": "trilobite",
+        "name": "trilobite"
+    },
+    {
+        "category": "turtle",
+        "name": "box_turtle"
+    },
+    {
+        "category": "turtle",
+        "name": "leatherback_turtle"
+    },
+    {
+        "category": "turtle",
+        "name": "loggerhead"
+    },
+    {
+        "category": "turtle",
+        "name": "mud_turtle"
+    },
+    {
+        "category": "turtle",
+        "name": "terrapin"
+    },
+    {
+        "category": "ungulate",
+        "name": "African_elephant"
+    },
+    {
+        "category": "ungulate",
+        "name": "Arabian_camel"
+    },
+    {
+        "category": "ungulate",
+        "name": "Indian_elephant"
+    },
+    {
+        "category": "ungulate",
+        "name": "bighorn"
+    },
+    {
+        "category": "ungulate",
+        "name": "bison"
+    },
+    {
+        "category": "ungulate",
+        "name": "gazelle"
+    },
+    {
+        "category": "ungulate",
+        "name": "hartebeest"
+    },
+    {
+        "category": "ungulate",
+        "name": "hippopotamus"
+    },
+    {
+        "category": "ungulate",
+        "name": "ibex"
+    },
+    {
+        "category": "ungulate",
+        "name": "impala"
+    },
+    {
+        "category": "ungulate",
+        "name": "llama"
+    },
+    {
+        "category": "ungulate",
+        "name": "ox"
+    },
+    {
+        "category": "ungulate",
+        "name": "ram"
+    },
+    {
+        "category": "ungulate",
+        "name": "tusker"
+    },
+    {
+        "category": "ungulate",
+        "name": "zebra"
+    },
+    {
+        "category": "ungulate",
+        "name": "water_buffalo"
+    },
+    {
+        "category": "vegetable",
+        "name": "artichoke"
+    },
+    {
+        "category": "vegetable",
+        "name": "bell_pepper"
+    },
+    {
+        "category": "vegetable",
+        "name": "broccoli"
+    },
+    {
+        "category": "vegetable",
+        "name": "butternut_squash"
+    },
+    {
+        "category": "vegetable",
+        "name": "cauliflower"
+    },
+    {
+        "category": "vegetable",
+        "name": "cucumber"
+    },
+    {
+        "category": "vegetable",
+        "name": "head_cabbage"
+    },
+    {
+        "category": "wild cat",
+        "name": "cheetah"
+    },
+    {
+        "category": "wild cat",
+        "name": "cougar"
+    },
+    {
+        "category": "wild cat",
+        "name": "jaguar"
+    },
+    {
+        "category": "wild cat",
+        "name": "leopard"
+    },
+    {
+        "category": "wild cat",
+        "name": "lion"
+    },
+    {
+        "category": "wild cat",
+        "name": "lynx"
+    },
+    {
+        "category": "wild cat",
+        "name": "snow_leopard"
+    },
+    {
+        "category": "wild cat",
+        "name": "tiger"
+    },
+    {
+        "category": "wild cat",
+        "name": "tiger_cat"
+    },
+    {
+        "category": "wild dog",
+        "name": "Arctic_fox"
+    },
+    {
+        "category": "wild dog",
+        "name": "coyote"
+    },
+    {
+        "category": "wild dog",
+        "name": "dingo"
+    },
+    {
+        "category": "wild dog",
+        "name": "grey_fox"
+    },
+    {
+        "category": "wild dog",
+        "name": "hyena"
+    },
+    {
+        "category": "wild dog",
+        "name": "kit_fox"
+    },
+    {
+        "category": "wild dog",
+        "name": "red_fox"
+    },
+    {
+        "category": "wild dog",
+        "name": "red_wolf"
+    },
+    {
+        "category": "wild dog",
+        "name": "timber_wolf"
+    },
+    {
+        "category": "wild dog",
+        "name": "white_wolf"
+    },
+    {
+        "category": "wild dog",
+        "name": "dhole"
+    },
+    {
+        "category": "accessory",
+        "name": "Windsor_tie"
+    },
+    {
+        "category": "accessory",
+        "name": "backpack"
+    },
+    {
+        "category": "accessory",
+        "name": "bolo_tie"
+    },
+    {
+        "category": "accessory",
+        "name": "bow_tie"
+    },
+    {
+        "category": "accessory",
+        "name": "buckle"
+    },
+    {
+        "category": "accessory",
+        "name": "feather_boa"
+    },
+    {
+        "category": "accessory",
+        "name": "gasmask"
+    },
+    {
+        "category": "accessory",
+        "name": "hair_slide"
+    },
+    {
+        "category": "accessory",
+        "name": "handkerchief"
+    },
+    {
+        "category": "accessory",
+        "name": "lipstick"
+    },
+    {
+        "category": "accessory",
+        "name": "mailbag"
+    },
+    {
+        "category": "accessory",
+        "name": "neck_brace"
+    },
+    {
+        "category": "accessory",
+        "name": "necklace"
+    },
+    {
+        "category": "accessory",
+        "name": "purse"
+    },
+    {
+        "category": "accessory",
+        "name": "sleeping_bag"
+    },
+    {
+        "category": "accessory",
+        "name": "stole"
+    },
+    {
+        "category": "accessory",
+        "name": "umbrella"
+    },
+    {
+        "category": "accessory",
+        "name": "wallet"
+    },
+    {
+        "category": "aircraft",
+        "name": "airliner"
+    },
+    {
+        "category": "aircraft",
+        "name": "airship"
+    },
+    {
+        "category": "aircraft",
+        "name": "parachute"
+    },
+    {
+        "category": "aircraft",
+        "name": "space_shuttle"
+    },
+    {
+        "category": "aircraft",
+        "name": "warplane"
+    },
+    {
+        "category": "ball",
+        "name": "baseball"
+    },
+    {
+        "category": "ball",
+        "name": "basketball"
+    },
+    {
+        "category": "ball",
+        "name": "croquet_ball"
+    },
+    {
+        "category": "ball",
+        "name": "golf_ball"
+    },
+    {
+        "category": "ball",
+        "name": "ping-pong_ball"
+    },
+    {
+        "category": "ball",
+        "name": "rugby_ball"
+    },
+    {
+        "category": "ball",
+        "name": "soccer_ball"
+    },
+    {
+        "category": "ball",
+        "name": "tennis_ball"
+    },
+    {
+        "category": "ball",
+        "name": "volleyball"
+    },
+    {
+        "category": "boat",
+        "name": "aircraft_carrier"
+    },
+    {
+        "category": "boat",
+        "name": "canoe"
+    },
+    {
+        "category": "boat",
+        "name": "catamaran"
+    },
+    {
+        "category": "boat",
+        "name": "container_ship"
+    },
+    {
+        "category": "boat",
+        "name": "fireboat"
+    },
+    {
+        "category": "boat",
+        "name": "gondola"
+    },
+    {
+        "category": "boat",
+        "name": "lifeboat"
+    },
+    {
+        "category": "boat",
+        "name": "liner"
+    },
+    {
+        "category": "boat",
+        "name": "paddlewheel"
+    },
+    {
+        "category": "boat",
+        "name": "schooner"
+    },
+    {
+        "category": "boat",
+        "name": "speedboat"
+    },
+    {
+        "category": "boat",
+        "name": "submarine"
+    },
+    {
+        "category": "boat",
+        "name": "trimaran"
+    },
+    {
+        "category": "boat",
+        "name": "wreck"
+    },
+    {
+        "category": "boat",
+        "name": "yawl"
+    },
+    {
+        "category": "building",
+        "name": "bakery"
+    },
+    {
+        "category": "building",
+        "name": "barbershop"
+    },
+    {
+        "category": "building",
+        "name": "barn"
+    },
+    {
+        "category": "building",
+        "name": "beacon"
+    },
+    {
+        "category": "building",
+        "name": "bell_cote"
+    },
+    {
+        "category": "building",
+        "name": "boathouse"
+    },
+    {
+        "category": "building",
+        "name": "bookshop"
+    },
+    {
+        "category": "building",
+        "name": "butcher_shop"
+    },
+    {
+        "category": "building",
+        "name": "carousel"
+    },
+    {
+        "category": "building",
+        "name": "castle"
+    },
+    {
+        "category": "building",
+        "name": "church"
+    },
+    {
+        "category": "building",
+        "name": "cinema"
+    },
+    {
+        "category": "building",
+        "name": "cliff_dwelling"
+    },
+    {
+        "category": "building",
+        "name": "confectionery"
+    },
+    {
+        "category": "building",
+        "name": "dome"
+    },
+    {
+        "category": "building",
+        "name": "greenhouse"
+    },
+    {
+        "category": "building",
+        "name": "grocery_store"
+    },
+    {
+        "category": "building",
+        "name": "home_theater"
+    },
+    {
+        "category": "building",
+        "name": "library"
+    },
+    {
+        "category": "building",
+        "name": "lumbermill"
+    },
+    {
+        "category": "building",
+        "name": "mobile_home"
+    },
+    {
+        "category": "building",
+        "name": "monastery"
+    },
+    {
+        "category": "building",
+        "name": "mosque"
+    },
+    {
+        "category": "building",
+        "name": "mountain_tent"
+    },
+    {
+        "category": "building",
+        "name": "obelisk"
+    },
+    {
+        "category": "building",
+        "name": "palace"
+    },
+    {
+        "category": "building",
+        "name": "patio"
+    },
+    {
+        "category": "building",
+        "name": "planetarium"
+    },
+    {
+        "category": "building",
+        "name": "prison"
+    },
+    {
+        "category": "building",
+        "name": "restaurant"
+    },
+    {
+        "category": "building",
+        "name": "shoe_shop"
+    },
+    {
+        "category": "building",
+        "name": "stupa"
+    },
+    {
+        "category": "building",
+        "name": "thatch"
+    },
+    {
+        "category": "building",
+        "name": "tile_roof"
+    },
+    {
+        "category": "building",
+        "name": "tobacco_shop"
+    },
+    {
+        "category": "building",
+        "name": "toyshop"
+    },
+    {
+        "category": "building",
+        "name": "yurt"
+    },
+    {
+        "category": "clothing",
+        "name": "Loafer"
+    },
+    {
+        "category": "clothing",
+        "name": "abaya"
+    },
+    {
+        "category": "clothing",
+        "name": "academic_gown"
+    },
+    {
+        "category": "clothing",
+        "name": "apron"
+    },
+    {
+        "category": "clothing",
+        "name": "bib"
+    },
+    {
+        "category": "clothing",
+        "name": "bikini"
+    },
+    {
+        "category": "clothing",
+        "name": "brassiere"
+    },
+    {
+        "category": "clothing",
+        "name": "breastplate"
+    },
+    {
+        "category": "clothing",
+        "name": "bulletproof_vest"
+    },
+    {
+        "category": "clothing",
+        "name": "cardigan"
+    },
+    {
+        "category": "clothing",
+        "name": "chain_mail"
+    },
+    {
+        "category": "clothing",
+        "name": "cloak"
+    },
+    {
+        "category": "clothing",
+        "name": "clog"
+    },
+    {
+        "category": "clothing",
+        "name": "cowboy_boot"
+    },
+    {
+        "category": "clothing",
+        "name": "cowboy_hat"
+    },
+    {
+        "category": "clothing",
+        "name": "cuirass"
+    },
+    {
+        "category": "clothing",
+        "name": "diaper"
+    },
+    {
+        "category": "clothing",
+        "name": "fur_coat"
+    },
+    {
+        "category": "clothing",
+        "name": "gown"
+    },
+    {
+        "category": "clothing",
+        "name": "hoopskirt"
+    },
+    {
+        "category": "clothing",
+        "name": "jean"
+    },
+    {
+        "category": "clothing",
+        "name": "jersey"
+    },
+    {
+        "category": "clothing",
+        "name": "kimono"
+    },
+    {
+        "category": "clothing",
+        "name": "knee_pad"
+    },
+    {
+        "category": "clothing",
+        "name": "lab_coat"
+    },
+    {
+        "category": "clothing",
+        "name": "maillot"
+    },
+    {
+        "category": "clothing",
+        "name": "maillot"
+    },
+    {
+        "category": "clothing",
+        "name": "mask"
+    },
+    {
+        "category": "clothing",
+        "name": "military_uniform"
+    },
+    {
+        "category": "clothing",
+        "name": "miniskirt"
+    },
+    {
+        "category": "clothing",
+        "name": "mitten"
+    },
+    {
+        "category": "clothing",
+        "name": "overskirt"
+    },
+    {
+        "category": "clothing",
+        "name": "oxygen_mask"
+    },
+    {
+        "category": "clothing",
+        "name": "pajama"
+    },
+    {
+        "category": "clothing",
+        "name": "poncho"
+    },
+    {
+        "category": "clothing",
+        "name": "running_shoe"
+    },
+    {
+        "category": "clothing",
+        "name": "sandal"
+    },
+    {
+        "category": "clothing",
+        "name": "sarong"
+    },
+    {
+        "category": "clothing",
+        "name": "ski_mask"
+    },
+    {
+        "category": "clothing",
+        "name": "sock"
+    },
+    {
+        "category": "clothing",
+        "name": "suit"
+    },
+    {
+        "category": "clothing",
+        "name": "sunglasses"
+    },
+    {
+        "category": "clothing",
+        "name": "sweatshirt"
+    },
+    {
+        "category": "clothing",
+        "name": "swimming_trunks"
+    },
+    {
+        "category": "clothing",
+        "name": "trench_coat"
+    },
+    {
+        "category": "clothing",
+        "name": "vestment"
+    },
+    {
+        "category": "clothing",
+        "name": "wig"
+    },
+    {
+        "category": "container",
+        "name": "barrel"
+    },
+    {
+        "category": "container",
+        "name": "carton"
+    },
+    {
+        "category": "container",
+        "name": "chest"
+    },
+    {
+        "category": "container",
+        "name": "crate"
+    },
+    {
+        "category": "container",
+        "name": "medicine_chest"
+    },
+    {
+        "category": "container",
+        "name": "milk_can"
+    },
+    {
+        "category": "container",
+        "name": "packet"
+    },
+    {
+        "category": "container",
+        "name": "pill_bottle"
+    },
+    {
+        "category": "container",
+        "name": "plastic_bag"
+    },
+    {
+        "category": "container",
+        "name": "rain_barrel"
+    },
+    {
+        "category": "container",
+        "name": "safe"
+    },
+    {
+        "category": "container",
+        "name": "shopping_basket"
+    },
+    {
+        "category": "container",
+        "name": "shopping_cart"
+    },
+    {
+        "category": "container",
+        "name": "vault"
+    },
+    {
+        "category": "container",
+        "name": "washbasin"
+    },
+    {
+        "category": "container",
+        "name": "water_bottle"
+    },
+    {
+        "category": "container",
+        "name": "water_jug"
+    },
+    {
+        "category": "container",
+        "name": "whiskey_jug"
+    },
+    {
+        "category": "cooking",
+        "name": "Crock_Pot"
+    },
+    {
+        "category": "cooking",
+        "name": "Dutch_oven"
+    },
+    {
+        "category": "cooking",
+        "name": "caldron"
+    },
+    {
+        "category": "cooking",
+        "name": "cleaver"
+    },
+    {
+        "category": "cooking",
+        "name": "cocktail_shaker"
+    },
+    {
+        "category": "cooking",
+        "name": "coffee_mug"
+    },
+    {
+        "category": "cooking",
+        "name": "coffeepot"
+    },
+    {
+        "category": "cooking",
+        "name": "corkscrew"
+    },
+    {
+        "category": "cooking",
+        "name": "cup"
+    },
+    {
+        "category": "cooking",
+        "name": "espresso_maker"
+    },
+    {
+        "category": "cooking",
+        "name": "frying_pan"
+    },
+    {
+        "category": "cooking",
+        "name": "goblet"
+    },
+    {
+        "category": "cooking",
+        "name": "hot_pot"
+    },
+    {
+        "category": "cooking",
+        "name": "ladle"
+    },
+    {
+        "category": "cooking",
+        "name": "measuring_cup"
+    },
+    {
+        "category": "cooking",
+        "name": "mixing_bowl"
+    },
+    {
+        "category": "cooking",
+        "name": "mortar"
+    },
+    {
+        "category": "cooking",
+        "name": "pitcher"
+    },
+    {
+        "category": "cooking",
+        "name": "plate"
+    },
+    {
+        "category": "cooking",
+        "name": "pot"
+    },
+    {
+        "category": "cooking",
+        "name": "rotisserie"
+    },
+    {
+        "category": "cooking",
+        "name": "soup_bowl"
+    },
+    {
+        "category": "cooking",
+        "name": "spatula"
+    },
+    {
+        "category": "cooking",
+        "name": "strainer"
+    },
+    {
+        "category": "cooking",
+        "name": "teapot"
+    },
+    {
+        "category": "cooking",
+        "name": "wok"
+    },
+    {
+        "category": "cooking",
+        "name": "wooden_spoon"
+    },
+    {
+        "category": "decor",
+        "name": "Christmas_stocking"
+    },
+    {
+        "category": "decor",
+        "name": "analog_clock"
+    },
+    {
+        "category": "decor",
+        "name": "bath_towel"
+    },
+    {
+        "category": "decor",
+        "name": "brass"
+    },
+    {
+        "category": "decor",
+        "name": "dishrag"
+    },
+    {
+        "category": "decor",
+        "name": "doormat"
+    },
+    {
+        "category": "decor",
+        "name": "hamper"
+    },
+    {
+        "category": "decor",
+        "name": "lampshade"
+    },
+    {
+        "category": "decor",
+        "name": "piggy_bank"
+    },
+    {
+        "category": "decor",
+        "name": "pillow"
+    },
+    {
+        "category": "decor",
+        "name": "plate_rack"
+    },
+    {
+        "category": "decor",
+        "name": "prayer_rug"
+    },
+    {
+        "category": "decor",
+        "name": "quilt"
+    },
+    {
+        "category": "decor",
+        "name": "screen"
+    },
+    {
+        "category": "decor",
+        "name": "shower_curtain"
+    },
+    {
+        "category": "decor",
+        "name": "soap_dispenser"
+    },
+    {
+        "category": "decor",
+        "name": "table_lamp"
+    },
+    {
+        "category": "decor",
+        "name": "theater_curtain"
+    },
+    {
+        "category": "decor",
+        "name": "tray"
+    },
+    {
+        "category": "decor",
+        "name": "vase"
+    },
+    {
+        "category": "decor",
+        "name": "window_screen"
+    },
+    {
+        "category": "decor",
+        "name": "window_shade"
+    },
+    {
+        "category": "electronics",
+        "name": "CD_player"
+    },
+    {
+        "category": "electronics",
+        "name": "Polaroid_camera"
+    },
+    {
+        "category": "electronics",
+        "name": "cassette_player"
+    },
+    {
+        "category": "electronics",
+        "name": "cellular_telephone"
+    },
+    {
+        "category": "electronics",
+        "name": "computer_keyboard"
+    },
+    {
+        "category": "electronics",
+        "name": "desktop_computer"
+    },
+    {
+        "category": "electronics",
+        "name": "dial_telephone"
+    },
+    {
+        "category": "electronics",
+        "name": "digital_clock"
+    },
+    {
+        "category": "electronics",
+        "name": "digital_watch"
+    },
+    {
+        "category": "electronics",
+        "name": "dishwasher"
+    },
+    {
+        "category": "electronics",
+        "name": "electric_fan"
+    },
+    {
+        "category": "electronics",
+        "name": "hand-held_computer"
+    },
+    {
+        "category": "electronics",
+        "name": "hand_blower"
+    },
+    {
+        "category": "electronics",
+        "name": "hard_disc"
+    },
+    {
+        "category": "electronics",
+        "name": "iPod"
+    },
+    {
+        "category": "electronics",
+        "name": "joystick"
+    },
+    {
+        "category": "electronics",
+        "name": "laptop"
+    },
+    {
+        "category": "electronics",
+        "name": "loudspeaker"
+    },
+    {
+        "category": "electronics",
+        "name": "microphone"
+    },
+    {
+        "category": "electronics",
+        "name": "microwave"
+    },
+    {
+        "category": "electronics",
+        "name": "modem"
+    },
+    {
+        "category": "electronics",
+        "name": "monitor"
+    },
+    {
+        "category": "electronics",
+        "name": "odometer"
+    },
+    {
+        "category": "electronics",
+        "name": "oscilloscope"
+    },
+    {
+        "category": "electronics",
+        "name": "parking_meter"
+    },
+    {
+        "category": "electronics",
+        "name": "pay-phone"
+    },
+    {
+        "category": "electronics",
+        "name": "photocopier"
+    },
+    {
+        "category": "electronics",
+        "name": "power_drill"
+    },
+    {
+        "category": "electronics",
+        "name": "printer"
+    },
+    {
+        "category": "electronics",
+        "name": "projector"
+    },
+    {
+        "category": "electronics",
+        "name": "radiator"
+    },
+    {
+        "category": "electronics",
+        "name": "radio"
+    },
+    {
+        "category": "electronics",
+        "name": "reflex_camera"
+    },
+    {
+        "category": "electronics",
+        "name": "remote_control"
+    },
+    {
+        "category": "electronics",
+        "name": "scale"
+    },
+    {
+        "category": "electronics",
+        "name": "slot"
+    },
+    {
+        "category": "electronics",
+        "name": "space_bar"
+    },
+    {
+        "category": "electronics",
+        "name": "space_heater"
+    },
+    {
+        "category": "electronics",
+        "name": "spotlight"
+    },
+    {
+        "category": "electronics",
+        "name": "stopwatch"
+    },
+    {
+        "category": "electronics",
+        "name": "switch"
+    },
+    {
+        "category": "electronics",
+        "name": "tape_player"
+    },
+    {
+        "category": "electronics",
+        "name": "television"
+    },
+    {
+        "category": "electronics",
+        "name": "toaster"
+    },
+    {
+        "category": "electronics",
+        "name": "traffic_light"
+    },
+    {
+        "category": "electronics",
+        "name": "typewriter_keyboard"
+    },
+    {
+        "category": "electronics",
+        "name": "vacuum"
+    },
+    {
+        "category": "electronics",
+        "name": "waffle_iron"
+    },
+    {
+        "category": "electronics",
+        "name": "washer"
+    },
+    {
+        "category": "fence",
+        "name": "chainlink_fence"
+    },
+    {
+        "category": "fence",
+        "name": "picket_fence"
+    },
+    {
+        "category": "fence",
+        "name": "worm_fence"
+    },
+    {
+        "category": "food",
+        "name": "French_loaf"
+    },
+    {
+        "category": "food",
+        "name": "bagel"
+    },
+    {
+        "category": "food",
+        "name": "beer_bottle"
+    },
+    {
+        "category": "food",
+        "name": "beer_glass"
+    },
+    {
+        "category": "food",
+        "name": "burrito"
+    },
+    {
+        "category": "food",
+        "name": "carbonara"
+    },
+    {
+        "category": "food",
+        "name": "cheeseburger"
+    },
+    {
+        "category": "food",
+        "name": "chocolate_sauce"
+    },
+    {
+        "category": "food",
+        "name": "consomme"
+    },
+    {
+        "category": "food",
+        "name": "corn"
+    },
+    {
+        "category": "food",
+        "name": "dough"
+    },
+    {
+        "category": "food",
+        "name": "ear"
+    },
+    {
+        "category": "food",
+        "name": "eggnog"
+    },
+    {
+        "category": "food",
+        "name": "espresso"
+    },
+    {
+        "category": "food",
+        "name": "guacamole"
+    },
+    {
+        "category": "food",
+        "name": "hotdog"
+    },
+    {
+        "category": "food",
+        "name": "ice_cream"
+    },
+    {
+        "category": "food",
+        "name": "ice_lolly"
+    },
+    {
+        "category": "food",
+        "name": "mashed_potato"
+    },
+    {
+        "category": "food",
+        "name": "meat_loaf"
+    },
+    {
+        "category": "food",
+        "name": "pizza"
+    },
+    {
+        "category": "food",
+        "name": "pop_bottle"
+    },
+    {
+        "category": "food",
+        "name": "potpie"
+    },
+    {
+        "category": "food",
+        "name": "pretzel"
+    },
+    {
+        "category": "food",
+        "name": "red_wine"
+    },
+    {
+        "category": "food",
+        "name": "saltshaker"
+    },
+    {
+        "category": "food",
+        "name": "trifle"
+    },
+    {
+        "category": "food",
+        "name": "wine_bottle"
+    },
+    {
+        "category": "furniture",
+        "name": "altar"
+    },
+    {
+        "category": "furniture",
+        "name": "ashcan"
+    },
+    {
+        "category": "furniture",
+        "name": "bannister"
+    },
+    {
+        "category": "furniture",
+        "name": "barber_chair"
+    },
+    {
+        "category": "furniture",
+        "name": "bassinet"
+    },
+    {
+        "category": "furniture",
+        "name": "bathtub"
+    },
+    {
+        "category": "furniture",
+        "name": "bookcase"
+    },
+    {
+        "category": "furniture",
+        "name": "chiffonier"
+    },
+    {
+        "category": "furniture",
+        "name": "china_cabinet"
+    },
+    {
+        "category": "furniture",
+        "name": "cradle"
+    },
+    {
+        "category": "furniture",
+        "name": "crib"
+    },
+    {
+        "category": "furniture",
+        "name": "desk"
+    },
+    {
+        "category": "furniture",
+        "name": "dining_table"
+    },
+    {
+        "category": "furniture",
+        "name": "entertainment_center"
+    },
+    {
+        "category": "furniture",
+        "name": "file"
+    },
+    {
+        "category": "furniture",
+        "name": "fire_screen"
+    },
+    {
+        "category": "furniture",
+        "name": "folding_chair"
+    },
+    {
+        "category": "furniture",
+        "name": "four-poster"
+    },
+    {
+        "category": "furniture",
+        "name": "mailbox"
+    },
+    {
+        "category": "furniture",
+        "name": "park_bench"
+    },
+    {
+        "category": "furniture",
+        "name": "pedestal"
+    },
+    {
+        "category": "furniture",
+        "name": "pool_table"
+    },
+    {
+        "category": "furniture",
+        "name": "refrigerator"
+    },
+    {
+        "category": "furniture",
+        "name": "rocking_chair"
+    },
+    {
+        "category": "furniture",
+        "name": "shoji"
+    },
+    {
+        "category": "furniture",
+        "name": "sliding_door"
+    },
+    {
+        "category": "furniture",
+        "name": "stage"
+    },
+    {
+        "category": "furniture",
+        "name": "stove"
+    },
+    {
+        "category": "furniture",
+        "name": "stretcher"
+    },
+    {
+        "category": "furniture",
+        "name": "studio_couch"
+    },
+    {
+        "category": "furniture",
+        "name": "throne"
+    },
+    {
+        "category": "furniture",
+        "name": "toilet_seat"
+    },
+    {
+        "category": "furniture",
+        "name": "tub"
+    },
+    {
+        "category": "furniture",
+        "name": "wardrobe"
+    },
+    {
+        "category": "hat",
+        "name": "bathing_cap"
+    },
+    {
+        "category": "hat",
+        "name": "bearskin"
+    },
+    {
+        "category": "hat",
+        "name": "bonnet"
+    },
+    {
+        "category": "hat",
+        "name": "crash_helmet"
+    },
+    {
+        "category": "hat",
+        "name": "mortarboard"
+    },
+    {
+        "category": "hat",
+        "name": "shower_cap"
+    },
+    {
+        "category": "hat",
+        "name": "sombrero"
+    },
+    {
+        "category": "hat",
+        "name": "pickelhaube"
+    },
+    {
+        "category": "instrument",
+        "name": "French_horn"
+    },
+    {
+        "category": "instrument",
+        "name": "accordion"
+    },
+    {
+        "category": "instrument",
+        "name": "acoustic_guitar"
+    },
+    {
+        "category": "instrument",
+        "name": "banjo"
+    },
+    {
+        "category": "instrument",
+        "name": "bassoon"
+    },
+    {
+        "category": "instrument",
+        "name": "cello"
+    },
+    {
+        "category": "instrument",
+        "name": "chime"
+    },
+    {
+        "category": "instrument",
+        "name": "cornet"
+    },
+    {
+        "category": "instrument",
+        "name": "drum"
+    },
+    {
+        "category": "instrument",
+        "name": "drumstick"
+    },
+    {
+        "category": "instrument",
+        "name": "electric_guitar"
+    },
+    {
+        "category": "instrument",
+        "name": "flute"
+    },
+    {
+        "category": "instrument",
+        "name": "gong"
+    },
+    {
+        "category": "instrument",
+        "name": "grand_piano"
+    },
+    {
+        "category": "instrument",
+        "name": "harmonica"
+    },
+    {
+        "category": "instrument",
+        "name": "harp"
+    },
+    {
+        "category": "instrument",
+        "name": "maraca"
+    },
+    {
+        "category": "instrument",
+        "name": "marimba"
+    },
+    {
+        "category": "instrument",
+        "name": "oboe"
+    },
+    {
+        "category": "instrument",
+        "name": "ocarina"
+    },
+    {
+        "category": "instrument",
+        "name": "organ"
+    },
+    {
+        "category": "instrument",
+        "name": "panpipe"
+    },
+    {
+        "category": "instrument",
+        "name": "pick"
+    },
+    {
+        "category": "instrument",
+        "name": "sax"
+    },
+    {
+        "category": "instrument",
+        "name": "steel_drum"
+    },
+    {
+        "category": "instrument",
+        "name": "trombone"
+    },
+    {
+        "category": "instrument",
+        "name": "upright"
+    },
+    {
+        "category": "instrument",
+        "name": "violin"
+    },
+    {
+        "category": "lab equipment",
+        "name": "Petri_dish"
+    },
+    {
+        "category": "lab equipment",
+        "name": "beaker"
+    },
+    {
+        "category": "other",
+        "name": "Band_Aid"
+    },
+    {
+        "category": "other",
+        "name": "bottlecap"
+    },
+    {
+        "category": "other",
+        "name": "bubble"
+    },
+    {
+        "category": "other",
+        "name": "face_powder"
+    },
+    {
+        "category": "other",
+        "name": "hair_spray"
+    },
+    {
+        "category": "other",
+        "name": "hay"
+    },
+    {
+        "category": "other",
+        "name": "honeycomb"
+    },
+    {
+        "category": "other",
+        "name": "knot"
+    },
+    {
+        "category": "other",
+        "name": "lotion"
+    },
+    {
+        "category": "other",
+        "name": "mosquito_net"
+    },
+    {
+        "category": "other",
+        "name": "muzzle"
+    },
+    {
+        "category": "other",
+        "name": "nipple"
+    },
+    {
+        "category": "other",
+        "name": "pencil_box"
+    },
+    {
+        "category": "other",
+        "name": "perfume"
+    },
+    {
+        "category": "other",
+        "name": "sunscreen"
+    },
+    {
+        "category": "other",
+        "name": "toilet_tissue"
+    },
+    {
+        "category": "other",
+        "name": "velvet"
+    },
+    {
+        "category": "other",
+        "name": "wing"
+    },
+    {
+        "category": "other",
+        "name": "wool"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "alp"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "apiary"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "birdhouse"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "breakwater"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "cliff"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "dam"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "dock"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "drilling_platform"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "flagpole"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "fountain"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "geyser"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "lakeside"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "manhole_cover"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "maypole"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "maze"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "megalith"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "pier"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "promontory"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "sandbar"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "seashore"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "spider_web"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "steel_arch_bridge"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "stone_wall"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "street_sign"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "sundial"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "suspension_bridge"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "totem_pole"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "triumphal_arch"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "valley"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "viaduct"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "volcano"
+    },
+    {
+        "category": "outdoor scene",
+        "name": "water_tower"
+    },
+    {
+        "category": "paper",
+        "name": "binder"
+    },
+    {
+        "category": "paper",
+        "name": "book_jacket"
+    },
+    {
+        "category": "paper",
+        "name": "comic_book"
+    },
+    {
+        "category": "paper",
+        "name": "crossword_puzzle"
+    },
+    {
+        "category": "paper",
+        "name": "envelope"
+    },
+    {
+        "category": "paper",
+        "name": "jigsaw_puzzle"
+    },
+    {
+        "category": "paper",
+        "name": "menu"
+    },
+    {
+        "category": "paper",
+        "name": "notebook"
+    },
+    {
+        "category": "paper",
+        "name": "paper_towel"
+    },
+    {
+        "category": "sports equipment",
+        "name": "balance_beam"
+    },
+    {
+        "category": "sports equipment",
+        "name": "barbell"
+    },
+    {
+        "category": "sports equipment",
+        "name": "football_helmet"
+    },
+    {
+        "category": "sports equipment",
+        "name": "horizontal_bar"
+    },
+    {
+        "category": "sports equipment",
+        "name": "paddle"
+    },
+    {
+        "category": "sports equipment",
+        "name": "parallel_bars"
+    },
+    {
+        "category": "sports equipment",
+        "name": "pole"
+    },
+    {
+        "category": "sports equipment",
+        "name": "puck"
+    },
+    {
+        "category": "sports equipment",
+        "name": "punching_bag"
+    },
+    {
+        "category": "sports equipment",
+        "name": "racket"
+    },
+    {
+        "category": "sports equipment",
+        "name": "scoreboard"
+    },
+    {
+        "category": "sports equipment",
+        "name": "ski"
+    },
+    {
+        "category": "sports equipment",
+        "name": "snorkel"
+    },
+    {
+        "category": "technology",
+        "name": "abacus"
+    },
+    {
+        "category": "technology",
+        "name": "barometer"
+    },
+    {
+        "category": "technology",
+        "name": "car_mirror"
+    },
+    {
+        "category": "technology",
+        "name": "car_wheel"
+    },
+    {
+        "category": "technology",
+        "name": "cash_machine"
+    },
+    {
+        "category": "technology",
+        "name": "cassette"
+    },
+    {
+        "category": "technology",
+        "name": "coil"
+    },
+    {
+        "category": "technology",
+        "name": "combination_lock"
+    },
+    {
+        "category": "technology",
+        "name": "disk_brake"
+    },
+    {
+        "category": "technology",
+        "name": "gas_pump"
+    },
+    {
+        "category": "technology",
+        "name": "hourglass"
+    },
+    {
+        "category": "technology",
+        "name": "lens_cap"
+    },
+    {
+        "category": "technology",
+        "name": "mousetrap"
+    },
+    {
+        "category": "technology",
+        "name": "oil_filter"
+    },
+    {
+        "category": "technology",
+        "name": "padlock"
+    },
+    {
+        "category": "technology",
+        "name": "radio_telescope"
+    },
+    {
+        "category": "technology",
+        "name": "reel"
+    },
+    {
+        "category": "technology",
+        "name": "seat_belt"
+    },
+    {
+        "category": "technology",
+        "name": "sewing_machine"
+    },
+    {
+        "category": "technology",
+        "name": "slide_rule"
+    },
+    {
+        "category": "technology",
+        "name": "solar_dish"
+    },
+    {
+        "category": "technology",
+        "name": "spindle"
+    },
+    {
+        "category": "technology",
+        "name": "tripod"
+    },
+    {
+        "category": "technology",
+        "name": "turnstile"
+    },
+    {
+        "category": "technology",
+        "name": "vending_machine"
+    },
+    {
+        "category": "technology",
+        "name": "wall_clock"
+    },
+    {
+        "category": "technology",
+        "name": "web_site"
+    },
+    {
+        "category": "tool",
+        "name": "ballpoint"
+    },
+    {
+        "category": "tool",
+        "name": "barrow"
+    },
+    {
+        "category": "tool",
+        "name": "binoculars"
+    },
+    {
+        "category": "tool",
+        "name": "broom"
+    },
+    {
+        "category": "tool",
+        "name": "bucket"
+    },
+    {
+        "category": "tool",
+        "name": "can_opener"
+    },
+    {
+        "category": "tool",
+        "name": "candle"
+    },
+    {
+        "category": "tool",
+        "name": "carpenter's_kit"
+    },
+    {
+        "category": "tool",
+        "name": "chain"
+    },
+    {
+        "category": "tool",
+        "name": "chain_saw"
+    },
+    {
+        "category": "tool",
+        "name": "crutch"
+    },
+    {
+        "category": "tool",
+        "name": "dumbbell"
+    },
+    {
+        "category": "tool",
+        "name": "fountain_pen"
+    },
+    {
+        "category": "tool",
+        "name": "hammer"
+    },
+    {
+        "category": "tool",
+        "name": "hatchet"
+    },
+    {
+        "category": "tool",
+        "name": "hook"
+    },
+    {
+        "category": "tool",
+        "name": "iron"
+    },
+    {
+        "category": "tool",
+        "name": "letter_opener"
+    },
+    {
+        "category": "tool",
+        "name": "lighter"
+    },
+    {
+        "category": "tool",
+        "name": "loupe"
+    },
+    {
+        "category": "tool",
+        "name": "magnetic_compass"
+    },
+    {
+        "category": "tool",
+        "name": "matchstick"
+    },
+    {
+        "category": "tool",
+        "name": "nail"
+    },
+    {
+        "category": "tool",
+        "name": "paintbrush"
+    },
+    {
+        "category": "tool",
+        "name": "pencil_sharpener"
+    },
+    {
+        "category": "tool",
+        "name": "plane"
+    },
+    {
+        "category": "tool",
+        "name": "plunger"
+    },
+    {
+        "category": "tool",
+        "name": "potter's_wheel"
+    },
+    {
+        "category": "tool",
+        "name": "quill"
+    },
+    {
+        "category": "tool",
+        "name": "rubber_eraser"
+    },
+    {
+        "category": "tool",
+        "name": "rule"
+    },
+    {
+        "category": "tool",
+        "name": "safety_pin"
+    },
+    {
+        "category": "tool",
+        "name": "screw"
+    },
+    {
+        "category": "tool",
+        "name": "screwdriver"
+    },
+    {
+        "category": "tool",
+        "name": "shield"
+    },
+    {
+        "category": "tool",
+        "name": "shovel"
+    },
+    {
+        "category": "tool",
+        "name": "stethoscope"
+    },
+    {
+        "category": "tool",
+        "name": "sunglass"
+    },
+    {
+        "category": "tool",
+        "name": "swab"
+    },
+    {
+        "category": "tool",
+        "name": "syringe"
+    },
+    {
+        "category": "tool",
+        "name": "thimble"
+    },
+    {
+        "category": "tool",
+        "name": "torch"
+    },
+    {
+        "category": "tool",
+        "name": "whistle"
+    },
+    {
+        "category": "toy",
+        "name": "balloon"
+    },
+    {
+        "category": "toy",
+        "name": "pinwheel"
+    },
+    {
+        "category": "toy",
+        "name": "swing"
+    },
+    {
+        "category": "toy",
+        "name": "teddy"
+    },
+    {
+        "category": "train",
+        "name": "bullet_train"
+    },
+    {
+        "category": "train",
+        "name": "electric_locomotive"
+    },
+    {
+        "category": "train",
+        "name": "freight_car"
+    },
+    {
+        "category": "train",
+        "name": "steam_locomotive"
+    },
+    {
+        "category": "vehicle",
+        "name": "Model_T"
+    },
+    {
+        "category": "vehicle",
+        "name": "ambulance"
+    },
+    {
+        "category": "vehicle",
+        "name": "amphibian"
+    },
+    {
+        "category": "vehicle",
+        "name": "beach_wagon"
+    },
+    {
+        "category": "vehicle",
+        "name": "bicycle-built-for-two"
+    },
+    {
+        "category": "vehicle",
+        "name": "bobsled"
+    },
+    {
+        "category": "vehicle",
+        "name": "cab"
+    },
+    {
+        "category": "vehicle",
+        "name": "convertible"
+    },
+    {
+        "category": "vehicle",
+        "name": "crane"
+    },
+    {
+        "category": "vehicle",
+        "name": "dogsled"
+    },
+    {
+        "category": "vehicle",
+        "name": "fire_engine"
+    },
+    {
+        "category": "vehicle",
+        "name": "forklift"
+    },
+    {
+        "category": "vehicle",
+        "name": "garbage_truck"
+    },
+    {
+        "category": "vehicle",
+        "name": "go-kart"
+    },
+    {
+        "category": "vehicle",
+        "name": "golfcart"
+    },
+    {
+        "category": "vehicle",
+        "name": "grille"
+    },
+    {
+        "category": "vehicle",
+        "name": "half_track"
+    },
+    {
+        "category": "vehicle",
+        "name": "harvester"
+    },
+    {
+        "category": "vehicle",
+        "name": "horse_cart"
+    },
+    {
+        "category": "vehicle",
+        "name": "jeep"
+    },
+    {
+        "category": "vehicle",
+        "name": "jinrikisha"
+    },
+    {
+        "category": "vehicle",
+        "name": "lawn_mower"
+    },
+    {
+        "category": "vehicle",
+        "name": "limousine"
+    },
+    {
+        "category": "vehicle",
+        "name": "minibus"
+    },
+    {
+        "category": "vehicle",
+        "name": "minivan"
+    },
+    {
+        "category": "vehicle",
+        "name": "moped"
+    },
+    {
+        "category": "vehicle",
+        "name": "motor_scooter"
+    },
+    {
+        "category": "vehicle",
+        "name": "mountain_bike"
+    },
+    {
+        "category": "vehicle",
+        "name": "moving_van"
+    },
+    {
+        "category": "vehicle",
+        "name": "oxcart"
+    },
+    {
+        "category": "vehicle",
+        "name": "passenger_car"
+    },
+    {
+        "category": "vehicle",
+        "name": "pickup"
+    },
+    {
+        "category": "vehicle",
+        "name": "plow"
+    },
+    {
+        "category": "vehicle",
+        "name": "police_van"
+    },
+    {
+        "category": "vehicle",
+        "name": "racer"
+    },
+    {
+        "category": "vehicle",
+        "name": "recreational_vehicle"
+    },
+    {
+        "category": "vehicle",
+        "name": "school_bus"
+    },
+    {
+        "category": "vehicle",
+        "name": "snowmobile"
+    },
+    {
+        "category": "vehicle",
+        "name": "snowplow"
+    },
+    {
+        "category": "vehicle",
+        "name": "sports_car"
+    },
+    {
+        "category": "vehicle",
+        "name": "streetcar"
+    },
+    {
+        "category": "vehicle",
+        "name": "tank"
+    },
+    {
+        "category": "vehicle",
+        "name": "thresher"
+    },
+    {
+        "category": "vehicle",
+        "name": "tow_truck"
+    },
+    {
+        "category": "vehicle",
+        "name": "tractor"
+    },
+    {
+        "category": "vehicle",
+        "name": "trailer_truck"
+    },
+    {
+        "category": "vehicle",
+        "name": "tricycle"
+    },
+    {
+        "category": "vehicle",
+        "name": "trolleybus"
+    },
+    {
+        "category": "vehicle",
+        "name": "unicycle"
+    },
+    {
+        "category": "weapon",
+        "name": "assault_rifle"
+    },
+    {
+        "category": "weapon",
+        "name": "bow"
+    },
+    {
+        "category": "weapon",
+        "name": "cannon"
+    },
+    {
+        "category": "weapon",
+        "name": "guillotine"
+    },
+    {
+        "category": "weapon",
+        "name": "holster"
+    },
+    {
+        "category": "weapon",
+        "name": "missile"
+    },
+    {
+        "category": "weapon",
+        "name": "projectile"
+    },
+    {
+        "category": "weapon",
+        "name": "revolver"
+    },
+    {
+        "category": "weapon",
+        "name": "rifle"
+    },
+    {
+        "category": "weapon",
+        "name": "scabbard"
+    }
+]
