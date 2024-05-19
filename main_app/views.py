@@ -205,6 +205,7 @@ class RiddleItemList(generics.ListCreateAPIView):
 
 class RiddleItemDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = RiddleItemSerializer
+    queryset = RiddleItem.objects.all()
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = 'id'
     
@@ -247,6 +248,7 @@ class RiddleItemSubmissionDetail(generics.RetrieveUpdateDestroyAPIView):
     
 class ItemList(generics.ListCreateAPIView):
     serializer_class = ItemSerializer
+    queryset = Item.objects.all()
     permission_classes = [permissions.IsAuthenticated]
 
 class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
