@@ -35,9 +35,10 @@ class HuntInstance(models.Model):
 
 class Item(models.Model):
     name = models.CharField(max_length=100)
+    category = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name
+        return f"{self.name} in {self.category}" 
 
 
 class RiddleItem(models.Model):
