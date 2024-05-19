@@ -252,6 +252,17 @@ class ItemList(generics.ListCreateAPIView):
     queryset = Item.objects.all()
     permission_classes = [permissions.IsAuthenticated]
 
+    def create(self, request, *args, **kwargs):
+        if isinstance(request.data, list):
+            # If the request data is a list, we need to validate and save each item
+            serializer = self.get_serializer(data=request.data, many=True)
+            serializer.is_valid(raise_exception=True)
+            self.perform_create(serializer)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            # Handle single dictionary case
+            return super().create(request, *args, **kwargs)
+
 class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ItemSerializer
     permission_classes = [permissions.IsAuthenticated]
