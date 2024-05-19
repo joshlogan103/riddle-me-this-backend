@@ -177,8 +177,14 @@ class HuntTemplateDetail(generics.RetrieveUpdateDestroyAPIView):
         
         hunt_instances = HuntInstance.objects.filter(scavenger_hunt = instance.id)
         hunt_instances_serializer = HuntInstanceSerializer(hunt_instances, many = True, context = {'request': request})
+
+        riddle_items = RiddleItem.objects.filter(scavenger_hunt = instance.id)
+        riddle_items_serializer = RiddleItemSerializer(riddle_items, many = True, context = {'request': request})
+
+
         return Response({
             'hunt_template': serializer.data,
-            'hunt_instances': hunt_instances_serializer.data
+            'hunt_instances': hunt_instances_serializer.data,
+            'riddle_items': riddle_items_serializer.data
         })
    
