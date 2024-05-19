@@ -21,9 +21,12 @@ class CreateUserView(generics.CreateAPIView):
     serializer_class = UserSerializer
     
     def create(self, request, *args, **kwargs):
+        print('creating user...')
         response = super().create(request, *args, **kwargs)
         user = User.objects.get(username=response.data['username'])
+        print(f"User created: {user}")
         refresh = RefreshToken.for_user(user)
+        print(f"Generated tokens: Refresh - {refresh}, Access - {refresh.access_token}")
         return Response({
             'refresh': str(refresh),
             'access': str(refresh.access_token),
