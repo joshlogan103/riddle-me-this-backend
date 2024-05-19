@@ -200,4 +200,9 @@ class RiddleItemList(generics.ListCreateAPIView):
         scavenger_hunt = self.kwargs['hunt_template_id']
         serializer.save(scavenger_hunt = scavenger_hunt)
 
+class RiddleItemDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = RiddleItemSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    lookup_field = 'id'
+    
         
