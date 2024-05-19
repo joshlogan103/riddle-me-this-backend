@@ -25,8 +25,8 @@ class ItemSerializer(serializers.HyperlinkedModelSerializer):
         extra_kwargs = {'url': {'view_name': 'item-detail', 'lookup_field': 'id'}}
 
 class ScavengerHuntSerializer(serializers.HyperlinkedModelSerializer):
-    riddle_items = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='riddleitem-detail')
-    hunt_instances = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='huntinstance-detail')
+    riddle_items = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='riddle-item-detail')
+    hunt_instances = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='hunt-instance-detail')
 
     class Meta:
         model = ScavengerHunt
