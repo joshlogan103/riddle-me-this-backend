@@ -188,3 +188,16 @@ class HuntTemplateDetail(generics.RetrieveUpdateDestroyAPIView):
             'riddle_items': riddle_items_serializer.data
         })
    
+class RiddleItemList(generics.ListCreateAPIView):
+    serializer_class = RiddleItemSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    
+    def get_queryset(self):
+        scavenger_hunt = self.kwargs['hunt_template_id']
+        return RiddleItem.objects.filter(scavenger_hunt = scavenger_hunt)
+    
+    def perform_create(self, serializer):
+        scavenger_hunt = self.kwargs['hunt_template_id']
+        serializer.save(scavenger_hunt = scavenger_hunt)
+
+        
