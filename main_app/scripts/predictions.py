@@ -44,6 +44,9 @@ predictions = model.predict(preprocessed_image)
 decoded_predictions = decode_predictions(predictions)
 print(decoded_predictions)
 
+for i, (imagenet_id, label, score) in enumerate(decoded_predictions):
+    print(f"{i+1}: {label} ({score:.2f})")
+
 # Check if the top predictions match the specified object
 # is_object = any(
 #     expected_label.lower() == pred[1].lower() for pred in decoded_predictions

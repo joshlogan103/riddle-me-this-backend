@@ -16,9 +16,6 @@ def preprocess_image(image_path):
 
     # Converts the image from BGR color space (default in OpenCV) to RGB color space
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    
-    # TODO Check if this works with grayscale images
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     # Converts the image to a floating-point tensor with values in the range [0, 255]
     image = np.expand_dims(image, axis=0)
@@ -37,18 +34,27 @@ def decode_predictions(preds):
 with open('main_app/data/imagenet.json', 'r') as file:
     imagenet_labels = json.load(file)
 
-# Display available keys to the user
+# Convert the loaded JSON into a more usable format
+category_to_names = {}
+for entry in imagenet_labels:
+    category = entry['category']
+    name = entry['name']
+    if category not in category_to_names:
+        category_to_names[category] = []
+    category_to_names[category].append(name)
+
+# Display available categories to the user
 print("Available categories:")
-for i, key in enumerate(imagenet_labels.keys(), 1):
+for i, key in enumerate(category_to_names.keys(), 1):
     print(f"{i}. {key}")
 
-# Prompt the user to select a key
-key_choice = int(input("Enter the number corresponding to the category you want to check: "))
-selected_key = list(imagenet_labels.keys())[key_choice - 1]
+# Prompt the user to select a category
+key_choice = int(input("Enter the number of the category you want to select: "))
+selected_key = list(category_to_names.keys())[key_choice - 1]
 
-# Display the values associated with the chosen key
+# Display the values associated with the chosen category
 print(f"Values for {selected_key}:")
-for value in imagenet_labels[selected_key]:
+for value in category_to_names[selected_key]:
     print(value)
 
 # Prompt the user to select a value
@@ -68,6 +74,20 @@ decoded_predictions = decode_predictions(predictions)
 is_object = any(
     object_name.lower() == pred[1].lower() for pred in decoded_predictions
 )
+
+# Print the results
+for i, (imagenet_id, label, score) in enumerate(decoded_predictions):
+    # Iterate over the decoded predictions with an index
+    # 'i' is the index, starting from 0
+    # 'imagenet_id' is the ImageNet ID of the predicted class
+    # 'label' is the human-readable label of the predicted class
+    # 'score' is the confidence score of the prediction
+
+    # Print the index (i+1), label, and score of each prediction
+    # '{i+1}' converts the index to 1-based instead of 0-based
+    # '{label}' is the human-readable label of the predicted class
+    # '{score:.2f}' formats the score to 2 decimal places
+    print(f"{i+1}: {label} ({score:.2f})")
 
 if is_object:
     print("Correct!")
