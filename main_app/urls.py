@@ -19,23 +19,23 @@ urlpatterns = [
     path('api/profiles/<int:profile_id>/participations/', ParticipationListByProfile.as_view(), name='participations-list-by-profile'),
     path('api/hunt-instance/<int:hunt_instance_id>/participations/', ParticipationListByHuntInstance.as_view(), name='participations-list-by-hunt-instance'),
     path('api/profiles/<int:profile_id>/hunt-instance/<int:hunt_instance_id>/participations/', ParticipationCreate.as_view(), name = 'participation-create'),
-    path('api/profiles/<int:profile_id>/hunt-instance/<int:hunt_instance_id>/participations/<int:participation_id>/', ParticipationDetail.as_view(), name='participation-detail'),
+    path('api/profiles/<int:profile_id>/hunt-instance/<int:hunt_instance_id>/participations/<int:id>/', ParticipationDetail.as_view(), name='participation-detail'),
 
     # Hunt Instances
     path('api/hunt-templates/<int:hunt_template_id>/hunt-instances/', HuntInstanceList.as_view(), name='hunt-instance-list'),
-    path('api/hunt-templates/<int:hunt_template_id>/hunt-instances/<int:hunt_instance_id>/', HuntInstanceDetail.as_view(), name='hunt-instance-detail'),
+    path('api/hunt-templates/<int:hunt_template_id>/hunt-instances/<int:id>/', HuntInstanceDetail.as_view(), name='hunt-instance-detail'),
 
     # Hunt Templates
     path('api/hunt-templates/', HuntTemplateList.as_view(), name='hunt-template-list'),
-    path('api/hunt-templates/<int:hunt_template_id>/', HuntTemplateDetail.as_view(), name='hunt-template-detail'),
+    path('api/hunt-templates/<int:id>/', HuntTemplateDetail.as_view(), name='hunt-template-detail'),
 
     # Riddle Items
     path('api/hunt-templates/<int:hunt_template_id>/riddle-items/', RiddleItemList.as_view(), name='riddle-item-list'),
-    path('api/hunt-templates/<int:hunt_template_id>/riddle-items/<int:riddle_item_id>/', RiddleItemDetail.as_view(), name='riddle-item-detail'),
+    path('api/hunt-templates/<int:hunt_template_id>/riddle-items/<int:id>/', RiddleItemDetail.as_view(), name='riddle-item-detail'),
 
     # Riddle Item Submissions
     path('api/hunt-templates/<int:hunt_template_id>/riddle-items/<int:riddle_item_id>/participations/<int:participation_id>/riddle-item-submissions/', RiddleItemSubmissionList.as_view(), name='riddle-item-submission-list'),
-    path('api/hunt-templates/<int:hunt_template_id>/riddle-items/<int:riddle_item_id>/participations/<int:participation_id>/riddle-item-submissions/<int:riddle_item_submission_id>/', RiddleItemSubmissionDetail.as_view(), name='riddle-item-submission-detail'),
+    path('api/hunt-templates/<int:hunt_template_id>/riddle-items/<int:riddle_item_id>/participations/<int:participation_id>/riddle-item-submissions/<int:id>/', RiddleItemSubmissionDetail.as_view(), name='riddle-item-submission-detail'),
 
     # Items
     path('api/items/', ItemList.as_view(), name='item-list'),
