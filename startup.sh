@@ -4,4 +4,5 @@ if ! python -c "import tensorflow" &> /dev/null; then
 fi
 
 # Start the application
-exec "$@"
+exec gunicorn Riddle_Me_This.wsgi --bind 0.0.0.0:$PORT
+
