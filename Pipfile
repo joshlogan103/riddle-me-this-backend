@@ -15,7 +15,7 @@ django-heroku = "*"
 whitenoise = "*"
 gunicorn = "*"
 numpy = "*"
-tensorflow = "*"
+opencv-python-headless = "*"
 
 [dev-packages]
 
