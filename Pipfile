@@ -16,6 +16,7 @@ whitenoise = "*"
 gunicorn = "*"
 numpy = "*"
 tensorflow = "*"
+opencv-python = "*"
 
 [dev-packages]
 
