@@ -13,7 +13,17 @@ from rest_framework.exceptions import ValidationError
 from .models import Profile, Participation, HuntInstance, ScavengerHunt,RiddleItem, RiddleItemSubmission, Item
 from .serializers import UserSerializer, ProfileSerializer, ParticipationSerializer, HuntInstanceSerializer, ScavengerHuntSerializer, RiddleItemSerializer, RiddleItemSubmissionSerializer, ItemSerializer
 
-# Create your views here.
+# Views
+
+# APILandingPage View
+
+class APILandingPage(APIView):
+    def get(self, request):
+        content = {
+            'Welcome Message': 'Welcome to the Riddle Me This API. This Django REST Framework API is used to service the Riddle Me This web app. The app allows users to create and participate in scavenger hunts. Players are given riddles to solve which identify the item they must find. Then players must upload an image of the solution. We score the game by using TensorFlow, Keras, and OpenCV to compare the image label to the expected result.'
+        }
+        return Response(content)
+
 # CreatUserView, LoginView, VerifyUserView
 
 class CreateUserView(generics.CreateAPIView):
@@ -250,7 +260,7 @@ class RiddleItemSubmissionDetail(generics.RetrieveUpdateDestroyAPIView):
 class ItemList(generics.ListCreateAPIView):
     serializer_class = ItemSerializer
     queryset = Item.objects.all()
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
     def create(self, request, *args, **kwargs):
         if isinstance(request.data, list):
