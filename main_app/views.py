@@ -49,7 +49,8 @@ class APILandingPage(APIView):
 class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
+    permission_classes = [permissions.AllowAny]
+    
     def create(self, request, *args, **kwargs):
         print("creating user...")
         response = super().create(request, *args, **kwargs)
