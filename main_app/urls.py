@@ -4,7 +4,7 @@ from .views import CreateUserView, LoginView, VerifyUserView, ProfileList, Profi
 
 urlpatterns = [
     # API Landing Page
-    path('/', APILandingPage.as_view(), name='api-landing-page'),
+    path('', APILandingPage.as_view(), name='api-landing-page'),
 
     # Users
     path('users/register/', CreateUserView.as_view(), name='register'),
