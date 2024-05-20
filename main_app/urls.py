@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CreateUserView, LoginView, VerifyUserView, ProfileList, ProfileDetail, ParticipationListByProfile, ParticipationListByHuntInstance, ParticipationCreate, ParticipationDetail, HuntInstanceList, HuntInstanceDetail, HuntTemplateList, HuntTemplateDetail, RiddleItemList, RiddleItemDetail, RiddleItemSubmissionList, RiddleItemSubmissionDetail, ItemList, ItemDetail, APILandingPage
+from .views import CreateUserView, LoginView, VerifyUserView, ProfileList, ProfileDetail, ParticipationListByProfile, ParticipationListByHuntInstance, ParticipationCreate, ParticipationDetail, HuntInstanceList, HuntInstanceDetail, HuntTemplateList, HuntTemplateDetail, RiddleItemList, RiddleItemDetail, RiddleItemSubmissionList, RiddleItemSubmissionDetail, ItemList, ItemDetail, APILandingPage, upload_image # TESTING
 
 
 urlpatterns = [
@@ -40,4 +40,7 @@ urlpatterns = [
     # Items
     path('api/items/', ItemList.as_view(), name='item-list'),
     path('api/items/<int:id>/', ItemDetail.as_view(), name='item-detail'),
+    
+    # TESTING
+    path('api/upload/', upload_image, name='upload_image'),
 ]

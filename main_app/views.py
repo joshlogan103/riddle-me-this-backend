@@ -10,6 +10,12 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from rest_framework.exceptions import ValidationError
 
+# TESTING
+from django.http import JsonResponse
+from .forms import ImageUploadForm
+from .models import UploadedImage
+from main_app.scripts.predictions import predict_image 
+
 from .models import (
     Profile,
     Participation,
@@ -34,6 +40,19 @@ from .serializers import (
 
 # APILandingPage View
 
+# TESTING
+def upload_image(request):
+    if request.method == 'POST':
+        form = ImageUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            uploaded_image = form.save()
+            image_path = uploaded_image.image.path
+            expected_label = request.POST.get('expected_label')  # Get the expected label from the request
+            result = predict_image(image_path, expected_label)  # Call your prediction function
+            return JsonResponse({'filePath': uploaded_image.image.url, 'predictions': result['predictions'], 'is_object_present': result.get('is_object_present')})
+        else:
+            return JsonResponse({'error': 'Invalid form'}, status=400)
+    return JsonResponse({'error': 'Invalid request method'}, status=405)
 
 class APILandingPage(APIView):
     def get(self, request):

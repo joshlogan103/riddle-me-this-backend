@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 import tensorflow as tf
-import json
 
 # Load the pre-trained ResNet50 model
 model = tf.keras.applications.ResNet50(weights='imagenet')
@@ -32,20 +31,44 @@ def decode_predictions(preds):
 
 # # Get expected label from riddle-item
 # expected_label = riddle_
+def predict_image(image_path, expected_label=None):
+    preprocessed_image = preprocess_image(image_path)
+    predictions = model.predict(preprocessed_image)
+    decoded_predictions = decode_predictions(predictions)
+    
+    # Prepare the result
+    result = [{'label': label, 'score': score} for _, label, score in decoded_predictions]
+    
+    # If expected_label is provided, check if it is in the top predictions
+    if expected_label:
+        is_object_present = any(expected_label.lower() == pred['label'].lower() for pred in result)
+        return {'predictions': result, 'is_object_present': is_object_present}
+    
+    return {'predictions': result}
+
+# For testing, you can run this script directly
+if __name__ == "__main__":
+    image_path = input("Enter the filename of the photo: ")
+    expected_label = input("Enter the expected label: ")  # Optional: expected label for comparison
+    result = predict_image(image_path, expected_label)
+    
+    print(result['predictions'])
+    if expected_label:
+        print(f"Is '{expected_label}' present: {result['is_object_present']}")
 
 # Preprocess the image
-image_path = input("Enter the filename of the photo: ")
-preprocessed_image = preprocess_image(image_path)
+# image_path = input("Enter the filename of the photo: ")
+# preprocessed_image = preprocess_image(image_path)
 
 # Make predictions
-predictions = model.predict(preprocessed_image)
+# predictions = model.predict(preprocessed_image)
 
 # Decode predictions
-decoded_predictions = decode_predictions(predictions)
-print(decoded_predictions)
+# decoded_predictions = decode_predictions(predictions)
+# print(decoded_predictions)
 
-for i, (imagenet_id, label, score) in enumerate(decoded_predictions):
-    print(f"{i+1}: {label} ({score:.2f})")
+# for i, (imagenet_id, label, score) in enumerate(decoded_predictions):
+#     print(f"{i+1}: {label} ({score:.2f})")
 
 # Check if the top predictions match the specified object
 # is_object = any(

@@ -17,6 +17,7 @@ gunicorn = "*"
 numpy = "*"
 tensorflow = "*"
 opencv-python = "*"
+environ = "*"
 
 [dev-packages]
 

@@ -15,10 +15,12 @@ from datetime import timedelta
 import environ  
 import dj_database_url
 import django_heroku
+import os
 
 
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+# Define the base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -28,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # TODO: REMOVE ME FOR DEPLOYMENT
-# SECRET_KEY = 'django-insecure-l7l3!u%63or90dl#s=xp4__lbc(=qu)^2z2h&1@$s79cuylw0+'
+SECRET_KEY = 'django-insecure-l7l3!u%63or90dl#s=xp4__lbc(=qu)^2z2h&1@$s79cuylw0+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -37,18 +39,19 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.herokuapp.com']
 # TODO: ADD ME BACK FOR DEPLOYMENT
 # 
 # Initialise environment variables
-env = environ.Env()
-environ.Env.read_env()
+# env = environ.Env()
+# environ.Env.read_env()
 
 # TODO: ADD ME BACK FOR DEPLOYMENT
 
 # # Environmen variables
-DATABASE_URL=env('DATABASE_URL')
-SECRET_KEY=env('SECRET_KEY')
+# DATABASE_URL=env('DATABASE_URL')
+# SECRET_KEY=env('SECRET_KEY')
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",  # Adjust the port if your frontend runs on a different one
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://localhost:3000",  # Adjust the port if your frontend runs on a different one
+]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -92,7 +95,7 @@ ROOT_URLCONF = 'Riddle_Me_This.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend', 'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -113,19 +116,19 @@ WSGI_APPLICATION = 'Riddle_Me_This.wsgi.application'
 
 # TODO: REMOVE ME FOR DEPLOYMENT
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'riddle_me_this',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'riddle_me_this',
+    }
+}
 
 # TODO: ADD ME BACK FOR DEPLOYMENT
 
-DATABASES = {
-    'default': 
-        dj_database_url.config('DATABASE_URL')
-}
+# DATABASES = {
+#     'default': 
+#         dj_database_url.config('DATABASE_URL')
+# }
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
@@ -184,5 +187,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# TESTING
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 django_heroku.settings(locals())
