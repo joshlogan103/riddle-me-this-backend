@@ -16,6 +16,9 @@ def preprocess_image(image_path):
 
     # Converts the image from BGR color space (default in OpenCV) to RGB color space
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    
+    # TODO Check if this works with grayscale images
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     # Converts the image to a floating-point tensor with values in the range [0, 255]
     image = np.expand_dims(image, axis=0)
@@ -30,8 +33,26 @@ def preprocess_image(image_path):
 def decode_predictions(preds):
     return tf.keras.applications.resnet50.decode_predictions(preds, top=3)[0] # Decodes the prediction into a human-readable format
 
-# # Get expected label from riddle-item
-# expected_label = riddle_
+# Load the ImageNet labels from the JSON file
+with open('main_app/data/imagenet.json', 'r') as file:
+    imagenet_labels = json.load(file)
+
+# Display available keys to the user
+print("Available categories:")
+for i, key in enumerate(imagenet_labels.keys(), 1):
+    print(f"{i}. {key}")
+
+# Prompt the user to select a key
+key_choice = int(input("Enter the number corresponding to the category you want to check: "))
+selected_key = list(imagenet_labels.keys())[key_choice - 1]
+
+# Display the values associated with the chosen key
+print(f"Values for {selected_key}:")
+for value in imagenet_labels[selected_key]:
+    print(value)
+
+# Prompt the user to select a value
+object_name = input("Enter the name of the object you want to check from the list above: ")
 
 # Preprocess the image
 image_path = input("Enter the filename of the photo: ")
@@ -42,14 +63,13 @@ predictions = model.predict(preprocessed_image)
 
 # Decode predictions
 decoded_predictions = decode_predictions(predictions)
-print(decoded_predictions)
 
 # Check if the top predictions match the specified object
-# is_object = any(
-#     expected_label.lower() == pred[1].lower() for pred in decoded_predictions
-# )
+is_object = any(
+    object_name.lower() == pred[1].lower() for pred in decoded_predictions
+)
 
-# if is_object:
-#     print("Correct!")
-# else:
-#     print("Incorrect! Please try again.")
+if is_object:
+    print("Correct!")
+else:
+    print("Incorrect! Please try again.")
