@@ -14,8 +14,6 @@ from rest_framework.exceptions import ValidationError
 from django.http import JsonResponse
 import base64
 import json
-from .forms import ImageUploadForm
-from .models import UploadedImage
 from main_app.scripts.predictions import predict_image
 
 
