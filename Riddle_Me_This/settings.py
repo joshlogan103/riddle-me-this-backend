@@ -18,7 +18,8 @@ import django_heroku
 
 
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+# Define the base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -47,10 +48,13 @@ DATABASE_URL=env('DATABASE_URL')
 SECRET_KEY=env('SECRET_KEY')
 
 # CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",  # Adjust the port if your frontend runs on a different one
+#     "http://localhost:5173"
+#     # "http://localhost:3000",  # Adjust the port if your frontend runs on a different one
 # ]
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+
 
 # Application definition
 
@@ -70,12 +74,13 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    'Riddle_Me_This.middleware.CsrfExemptMiddleware',
 ]
 
 REST_FRAMEWORK = {

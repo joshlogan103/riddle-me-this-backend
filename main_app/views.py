@@ -10,6 +10,12 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from rest_framework.exceptions import ValidationError
 
+from django.http import JsonResponse
+import base64
+import json
+from main_app.scripts.predictions import predict_image
+
+
 from .models import (
     Profile,
     Participation,
@@ -34,6 +40,26 @@ from .serializers import (
 
 # APILandingPage View
 
+def upload_image(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            image_data = data.get('image')
+            # Decode the image data
+            image_data = base64.b64decode(image_data.split(',')[1])
+            with open('uploaded_image.jpg', 'wb') as f:
+                f.write(image_data)
+            # Simulate prediction result
+            # TODO - Replace sunglasses with riddle item item variable
+            result = predict_image('uploaded_image.jpg', 'sunglasses')
+            # Convert any float32 to float
+            result['predictions'] = [prediction for prediction in result['predictions']]
+            if 'is_object_present' in result:
+                result['is_object_present'] = result['is_object_present']
+            return JsonResponse({'filePath': 'uploaded_image.jpg', 'predictions': result['predictions'], 'is_object_present': result.get('is_object_present')})
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=400)
+    return JsonResponse({'error': 'Invalid request method'}, status=405)
 
 class APILandingPage(APIView):
     def get(self, request):
@@ -289,6 +315,8 @@ class RiddleItemSubmissionList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         riddle_item = self.kwargs["riddle_item_id"]
         participation = self.kwargs["participation_id"]
+        # TODO: 
+        
         serializer.save(riddle_item=riddle_item, participation=participation)
 
 
