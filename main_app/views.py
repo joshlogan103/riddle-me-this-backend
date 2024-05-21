@@ -182,7 +182,7 @@ class HuntInstanceList(generics.ListCreateAPIView):
 
     def get_queryset(self):
         hunt_template = self.kwargs["hunt_template_id"]
-        return ScavengerHunt.objects.filter(scavenger_hunt=hunt_template)
+        return HuntInstance.objects.filter(scavenger_hunt=hunt_template)
 
     def perform_create(self, serializer):
         hunt_template = self.kwargs["hunt_template_id"]
