@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CreateUserView, LoginView, VerifyUserView, ProfileList, ProfileDetail, ParticipationListByProfile, ParticipationListByHuntInstance, ParticipationCreate, ParticipationDetail, HuntInstanceList, HuntInstanceDetail, HuntTemplateList, HuntTemplateDetail, RiddleItemList, RiddleItemDetail, RiddleItemSubmissionList, RiddleItemSubmissionDetail, ItemList, ItemDetail, APILandingPage, upload_image # TESTING
+from .views import CreateUserView, LoginView, VerifyUserView, ProfileList, ProfileDetail, ParticipationListByProfile, ParticipationListByHuntInstance, ParticipationCreate, ParticipationDetail, HuntInstanceList, HuntInstanceDetail, HuntTemplateList, HuntTemplateDetail, RiddleItemList, RiddleItemDetail, RiddleItemSubmissionList, RiddleItemSubmissionDetail, ItemList, ItemDetail, APILandingPage, upload_image 
 
 
 urlpatterns = [

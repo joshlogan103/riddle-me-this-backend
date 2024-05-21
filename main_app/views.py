@@ -10,7 +10,6 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from rest_framework.exceptions import ValidationError
 
-# TESTING
 from django.http import JsonResponse
 import base64
 import json
@@ -41,7 +40,6 @@ from .serializers import (
 
 # APILandingPage View
 
-# TESTING
 def upload_image(request):
     if request.method == 'POST':
         try:

@@ -6,9 +6,6 @@ DIFFICULTY = (
     ('M', 'Medium'),
     ('H', 'Hard'),
 )
-# TESTING
-class UploadedImage(models.Model):
-    image = models.ImageField(upload_to='uploads/')
 
 class ScavengerHunt(models.Model):
     name = models.CharField(max_length=100)
