@@ -31,30 +31,38 @@ def decode_predictions(preds):
 
 # # Get expected label from riddle-item
 # expected_label = riddle_
-def predict_image(image_path, expected_label=None):
+def predict_image(image_path, expected_label):
     preprocessed_image = preprocess_image(image_path)
+    # print(preprocessed_image)
     predictions = model.predict(preprocessed_image)
+    # print(predictions)
     decoded_predictions = decode_predictions(predictions)
+    # print(decoded_predictions)
     
-    # Prepare the result
-    result = [{'label': label, 'score': score} for _, label, score in decoded_predictions]
+    # Convert predictions to JSON serializable format
+    result = [{'label': label, 'score': float(score)} for _, label, score in decoded_predictions]
+    print(result)
     
     # If expected_label is provided, check if it is in the top predictions
     if expected_label:
+        print(expected_label.lower())
         is_object_present = any(expected_label.lower() == pred['label'].lower() for pred in result)
+        print(is_object_present)
         return {'predictions': result, 'is_object_present': is_object_present}
+        
+    
     
     return {'predictions': result}
 
 # For testing, you can run this script directly
-if __name__ == "__main__":
-    image_path = input("Enter the filename of the photo: ")
-    expected_label = input("Enter the expected label: ")  # Optional: expected label for comparison
-    result = predict_image(image_path, expected_label)
+# if __name__ == "__main__":
+#     image_path = input("Enter the filename of the photo: ")
+#     expected_label = input("Enter the expected label: ")  # Optional: expected label for comparison
+#     result = predict_image(image_path, expected_label)
     
-    print(result['predictions'])
-    if expected_label:
-        print(f"Is '{expected_label}' present: {result['is_object_present']}")
+#     print(result['predictions'])
+#     if expected_label:
+#         print(f"Is '{expected_label}' present: {result['is_object_present']}")
 
 # Preprocess the image
 # image_path = input("Enter the filename of the photo: ")
