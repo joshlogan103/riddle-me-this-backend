@@ -165,8 +165,11 @@ class ParticipationCreate(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
-        profile = self.kwargs["profile_id"]
-        hunt_instance = self.kwargs["hunt_instance_id"]
+        profile_id = self.kwargs["profile_id"]
+        hunt_instance_id = self.kwargs["hunt_instance_id"]
+        profile = Profile.objects.get(id=profile_id)
+        hunt_instance = HuntInstance.objects.get(id=hunt_instance_id)
+
         serializer.save(hunt_instance=hunt_instance, profile=profile)
 
 
@@ -264,11 +267,13 @@ class RiddleItemList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        scavenger_hunt = self.kwargs["hunt_template_id"]
+        scavenger_hunt_id = self.kwargs["hunt_template_id"]
+        scavenger_hunt = ScavengerHunt.objects.get(id=scavenger_hunt_id)
         return RiddleItem.objects.filter(scavenger_hunt=scavenger_hunt)
 
     def perform_create(self, serializer):
-        scavenger_hunt = self.kwargs["hunt_template_id"]
+        scavenger_hunt_id = self.kwargs["hunt_template_id"]
+        scavenger_hunt = ScavengerHunt.objects.get(id=scavenger_hunt_id)
         serializer.save(scavenger_hunt=scavenger_hunt)
 
 
@@ -284,8 +289,12 @@ class RiddleItemSubmissionList(generics.ListCreateAPIView):
     permission_classes = [permissions.AllowAny]
 
     def get_queryset(self):
-        riddle_item = self.kwargs["riddle_item_id"]
-        participation = self.kwargs["participation_id"]
+        riddle_item_id = self.kwargs["riddle_item_id"]
+        participation_id = self.kwargs["participation_id"]
+
+        riddle_item = RiddleItem.objects.get(id=riddle_item_id)
+        participation = Participation.objects.get(id=participation_id)
+
         return RiddleItemSubmission.objects.filter(
             riddle_item=riddle_item, participation=participation
         )
