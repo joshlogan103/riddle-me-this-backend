@@ -73,7 +73,7 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         extra_kwargs = {'url': {'view_name': 'profile-detail', 'lookup_field': 'id'}}
 
 class RiddleItemSerializer(serializers.HyperlinkedModelSerializer):
-    item = ItemSerializer(read_only=True)
+    item = serializers.PrimaryKeyRelatedField(queryset=Item.objects.all())
     scavenger_hunt = serializers.HyperlinkedRelatedField(read_only=True, view_name='scavenger-hunt-detail')
     riddle_item_submissions = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='riddle-item-submission-detail')
 
