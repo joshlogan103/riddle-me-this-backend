@@ -181,12 +181,14 @@ class HuntInstanceList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        hunt_template = self.kwargs["hunt_template_id"]
-        return HuntInstance.objects.filter(scavenger_hunt=hunt_template)
+        hunt_template_id = self.kwargs["hunt_template_id"]
+        scavenger_hunt = ScavengerHunt.objects.get(id=hunt_template_id)
+        return HuntInstance.objects.filter(scavenger_hunt=scavenger_hunt)
 
     def perform_create(self, serializer):
-        hunt_template = self.kwargs["hunt_template_id"]
-        serializer.save(scavenger_hunt=hunt_template)
+        hunt_template_id = self.kwargs["hunt_template_id"]
+        scavenger_hunt = ScavengerHunt.objects.get(id=hunt_template_id)
+        serializer.save(scavenger_hunt=scavenger_hunt)
 
 
 class HuntInstanceDetail(generics.RetrieveUpdateDestroyAPIView):
