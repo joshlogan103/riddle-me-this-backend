@@ -16,6 +16,7 @@ whitenoise = "*"
 gunicorn = "*"
 numpy = "*"
 opencv-python-headless = "*"
+environ = "*"
 
 [dev-packages]
 

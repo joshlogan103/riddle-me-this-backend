@@ -31,10 +31,11 @@ class ScavengerHuntSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ScavengerHunt
         fields = "__all__"
-        extra_kwargs = {'url': {'view_name': 'scavenger-hunt-detail', 'lookup_field': 'id'}}
+        read_only_fields = ('creator',)
+        extra_kwargs = {'url': {'view_name': 'hunt-template-detail', 'lookup_field': 'id'}}
 
 class HuntInstanceSerializer(serializers.HyperlinkedModelSerializer):
-    scavenger_hunt = serializers.HyperlinkedRelatedField(read_only=True, view_name='scavengerhunt-detail')
+    scavenger_hunt = serializers.HyperlinkedRelatedField(read_only=True, view_name='hunt-template-detail')
     participations = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='participation-detail')
 
     class Meta:
