@@ -33,11 +33,8 @@ def decode_predictions(preds):
 # expected_label = riddle_
 def predict_image(image_path, expected_label):
     preprocessed_image = preprocess_image(image_path)
-    # print(preprocessed_image)
     predictions = model.predict(preprocessed_image)
-    # print(predictions)
     decoded_predictions = decode_predictions(predictions)
-    # print(decoded_predictions)
     
     # Convert predictions to JSON serializable format
     result = [{'label': label, 'score': float(score)} for _, label, score in decoded_predictions]
@@ -45,9 +42,7 @@ def predict_image(image_path, expected_label):
     
     # If expected_label is provided, check if it is in the top predictions
     if expected_label:
-        print(expected_label.lower())
         is_object_present = any(expected_label.lower() == pred['label'].lower() for pred in result)
-        print(is_object_present)
         return {'predictions': result, 'is_object_present': is_object_present}
         
     
@@ -64,16 +59,6 @@ def predict_image(image_path, expected_label):
 #     if expected_label:
 #         print(f"Is '{expected_label}' present: {result['is_object_present']}")
 
-# Preprocess the image
-# image_path = input("Enter the filename of the photo: ")
-# preprocessed_image = preprocess_image(image_path)
-
-# Make predictions
-# predictions = model.predict(preprocessed_image)
-
-# Decode predictions
-# decoded_predictions = decode_predictions(predictions)
-# print(decoded_predictions)
 
 # for i, (imagenet_id, label, score) in enumerate(decoded_predictions):
 #     print(f"{i+1}: {label} ({score:.2f})")
