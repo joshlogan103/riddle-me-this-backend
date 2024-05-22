@@ -44,10 +44,8 @@ class HuntInstanceSerializer(serializers.HyperlinkedModelSerializer):
         fields = "__all__"
 
     def get_url(self, obj):
-        return reverse('hunt-instance-detail', kwargs={
-            'hunt_template_id': obj.scavenger_hunt.id,
-            'id': obj.id
-        })
+        request = self.context.get('request')
+        return f"{request.scheme}://{request.get_host()}/api/hunt-templates/{obj.scavenger_hunt.id}/hunt-instances/{obj.id}/"
 
 class RiddleItemSubmissionSerializer(serializers.HyperlinkedModelSerializer):
     riddle_item = serializers.HyperlinkedRelatedField(read_only=True, view_name='riddle-item-detail')
