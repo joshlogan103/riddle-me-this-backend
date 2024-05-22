@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Profile, ScavengerHunt, HuntInstance, Item, RiddleItem, RiddleItemSubmission, Participation
 from django.contrib.auth.models import User
-
+from django.urls import reverse
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -37,11 +37,17 @@ class ScavengerHuntSerializer(serializers.HyperlinkedModelSerializer):
 class HuntInstanceSerializer(serializers.HyperlinkedModelSerializer):
     scavenger_hunt = serializers.HyperlinkedRelatedField(read_only=True, view_name='hunt-template-detail')
     participations = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='participation-detail')
+    url = serializers.SerializerMethodField()
 
     class Meta:
         model = HuntInstance
         fields = "__all__"
-        extra_kwargs = {'url': {'view_name': 'hunt-instance-detail', 'lookup_field': 'id'}}
+
+    def get_url(self, obj):
+        return reverse('hunt-instance-detail', kwargs={
+            'hunt_template_id': obj.scavenger_hunt.id,
+            'id': obj.id
+        })
 
 class RiddleItemSubmissionSerializer(serializers.HyperlinkedModelSerializer):
     riddle_item = serializers.HyperlinkedRelatedField(read_only=True, view_name='riddle-item-detail')
