@@ -45,6 +45,13 @@ class SimpleUserSerializer(serializers.ModelSerializer):
         model = User
         fields = "__all__"
 
+class HuntInstanceSerializerWithTemplate(serializers.ModelSerializer):
+    scavenger_hunt = SimpleScavengerHuntSerializer(read_only=True)
+
+    class Meta:
+        model = HuntInstance
+        field = '__all__'
+
 # Full Serializers
 
 class ItemSerializer(serializers.ModelSerializer):
@@ -97,7 +104,7 @@ class RiddleItemSubmissionSerializer(serializers.ModelSerializer):
 
 class ParticipationSerializer(serializers.ModelSerializer):
     profile = SimpleProfileSerializer(read_only=True)
-    hunt_instance = SimpleHuntInstanceSerializer(read_only=True)
+    hunt_instance = HuntInstanceSerializerWithTemplate(read_only=True)
     riddle_item_submissions = SimpleRiddleItemSubmissionSerializer(many=True, read_only=True)
 
     class Meta:
