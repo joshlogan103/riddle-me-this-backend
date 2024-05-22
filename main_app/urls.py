@@ -24,7 +24,7 @@ urlpatterns = [
     # Hunt Instances
     path('api/hunt-instances/', HuntInstanceListAll.as_view(), name='hunt-instance-list-all'),
     path('api/hunt-templates/<int:hunt_template_id>/hunt-instances/', HuntInstanceList.as_view(), name='hunt-instance-list'),
-    path('api/hunt-instances/<int:id>/', HuntInstanceDetail.as_view(), name='hunt-instance-detail'),
+    path('api/hunt-templates/<int:hunt_template_id>/hunt-instances/<int:id>/', HuntInstanceDetail.as_view(), name='hunt-instance-detail'),
 
     # Hunt Templates
     path('api/hunt-templates/', HuntTemplateList.as_view(), name='hunt-template-list'),
