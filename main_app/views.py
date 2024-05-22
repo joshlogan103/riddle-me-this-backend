@@ -132,6 +132,9 @@ class ProfileList(generics.ListCreateAPIView):
             'participations': participations_serializer.data
         })
 
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ProfileSerializer
     permission_classes = [permissions.IsAuthenticated]
