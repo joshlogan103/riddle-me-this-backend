@@ -35,11 +35,6 @@ class SimpleHuntInstanceSerializer(serializers.ModelSerializer):
         model = HuntInstance
         fields = "__all__"
 
-class SimpleProfileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Profile
-        fields = "__all__"
-
 class SimpleUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -51,6 +46,13 @@ class HuntInstanceSerializerWithTemplate(serializers.ModelSerializer):
     class Meta:
         model = HuntInstance
         field = '__all__'
+
+class SimpleProfileSerializer(serializers.ModelSerializer):
+    user = SimpleUserSerializer(read_only=True)
+
+    class Meta:
+        model = Profile
+        fields = "__all__"
 
 # Full Serializers
 
