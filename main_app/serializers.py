@@ -45,7 +45,7 @@ class HuntInstanceSerializerWithTemplate(serializers.ModelSerializer):
 
     class Meta:
         model = HuntInstance
-        field = '__all__'
+        fields = '__all__'
 
 class SimpleProfileSerializer(serializers.ModelSerializer):
     user = SimpleUserSerializer(read_only=True)
