@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import Profile, ScavengerHunt, HuntInstance, Item, RiddleItem, RiddleItemSubmission, Participation
 from django.contrib.auth.models import User
-from django.urls import reverse
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -18,70 +17,59 @@ class UserSerializer(serializers.ModelSerializer):
         )
         return user
 
-class ItemSerializer(serializers.HyperlinkedModelSerializer):
+class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
         fields = "__all__"
-        extra_kwargs = {'url': {'view_name': 'item-detail', 'lookup_field': 'id'}}
 
-class ScavengerHuntSerializer(serializers.HyperlinkedModelSerializer):
-    riddle_items = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='riddle-item-detail')
-    hunt_instances = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='hunt-instance-detail')
+class ScavengerHuntSerializer(serializers.ModelSerializer):
+    riddle_items = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    hunt_instances = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     class Meta:
         model = ScavengerHunt
         fields = "__all__"
         read_only_fields = ('creator',)
-        extra_kwargs = {'url': {'view_name': 'hunt-template-detail', 'lookup_field': 'id'}}
 
-class HuntInstanceSerializer(serializers.HyperlinkedModelSerializer):
-    scavenger_hunt = serializers.HyperlinkedRelatedField(read_only=True, view_name='hunt-template-detail')
-    participations = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='participation-detail')
-    url = serializers.SerializerMethodField()
+class HuntInstanceSerializer(serializers.ModelSerializer):
+    scavenger_hunt = serializers.PrimaryKeyRelatedField(read_only=True)
+    participations = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     class Meta:
         model = HuntInstance
         fields = "__all__"
 
-    def get_url(self, obj):
-        request = self.context.get('request')
-        return f"{request.scheme}://{request.get_host()}/api/hunt-templates/{obj.scavenger_hunt.id}/hunt-instances/{obj.id}/"
-
-class RiddleItemSubmissionSerializer(serializers.HyperlinkedModelSerializer):
-    riddle_item = serializers.HyperlinkedRelatedField(read_only=True, view_name='riddle-item-detail')
-    participation = serializers.HyperlinkedRelatedField(read_only=True, view_name='participation-detail')
+class RiddleItemSubmissionSerializer(serializers.ModelSerializer):
+    riddle_item = serializers.PrimaryKeyRelatedField(read_only=True)
+    participation = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = RiddleItemSubmission
         fields = "__all__"
-        extra_kwargs = {'url': {'view_name': 'riddle-item-submission-detail', 'lookup_field': 'id'}}
 
-class ParticipationSerializer(serializers.HyperlinkedModelSerializer):
-    profile = serializers.HyperlinkedRelatedField(view_name='profile-detail', read_only=True, lookup_field='id')
-    hunt_instance = serializers.HyperlinkedRelatedField(view_name='hunt-instance-detail', read_only=True, lookup_field='id')
+class ParticipationSerializer(serializers.ModelSerializer):
+    profile = serializers.PrimaryKeyRelatedField(read_only=True)
+    hunt_instance = serializers.PrimaryKeyRelatedField(read_only=True)
     riddle_item_submissions = RiddleItemSubmissionSerializer(many=True, read_only=True)
 
     class Meta:
         model = Participation
         fields = "__all__"
-        extra_kwargs = {'url': {'view_name': 'participation-detail', 'lookup_field': 'id'}}
 
-class ProfileSerializer(serializers.HyperlinkedModelSerializer):
+class ProfileSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
-    hunt_instances = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='hunt-instance-detail')
-    participations = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='participation-detail')
+    hunt_instances = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    participations = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     class Meta:
         model = Profile
         fields = "__all__"
-        extra_kwargs = {'url': {'view_name': 'profile-detail', 'lookup_field': 'id'}}
 
-class RiddleItemSerializer(serializers.HyperlinkedModelSerializer):
+class RiddleItemSerializer(serializers.ModelSerializer):
     item = serializers.PrimaryKeyRelatedField(queryset=Item.objects.all())
-    scavenger_hunt = serializers.HyperlinkedRelatedField(read_only=True, view_name='scavenger-hunt-detail')
-    riddle_item_submissions = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='riddle-item-submission-detail')
+    scavenger_hunt = serializers.PrimaryKeyRelatedField(read_only=True)
+    riddle_item_submissions = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     class Meta:
         model = RiddleItem
         fields = "__all__"
-        extra_kwargs = {'url': {'view_name': 'riddle-item-detail', 'lookup_field': 'id'}}
