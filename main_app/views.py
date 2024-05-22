@@ -10,13 +10,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from rest_framework.exceptions import ValidationError
 
-# TESTING
-from django.http import JsonResponse
-import base64
-import json
-from .forms import ImageUploadForm
-from .models import UploadedImage
-from main_app.scripts.predictions import predict_image
+from .helper_functions import upload_image
 
 
 from .models import (
@@ -40,31 +34,7 @@ from .serializers import (
 )
 
 # Views
-
 # APILandingPage View
-
-# TESTING
-def upload_image(request):
-    if request.method == 'POST':
-        try:
-            data = json.loads(request.body)
-            image_data = data.get('image')
-            # Decode the image data
-            image_data = base64.b64decode(image_data.split(',')[1])
-            with open('uploaded_image.jpg', 'wb') as f:
-                f.write(image_data)
-            # Simulate prediction result
-            # TODO - Replace sunglasses with riddle item item variable
-            result = predict_image('uploaded_image.jpg', 'sunglasses')
-            # Convert any float32 to float
-            result['predictions'] = [prediction for prediction in result['predictions']]
-            if 'is_object_present' in result:
-                result['is_object_present'] = result['is_object_present']
-            return JsonResponse({'filePath': 'uploaded_image.jpg', 'predictions': result['predictions'], 'is_object_present': result.get('is_object_present')})
-        except Exception as e:
-            return JsonResponse({'error': str(e)}, status=400)
-    return JsonResponse({'error': 'Invalid request method'}, status=405)
-
 class APILandingPage(APIView):
     def get(self, request):
         content = {
@@ -72,15 +42,11 @@ class APILandingPage(APIView):
         }
         return Response(content)
 
-
 # CreatUserView, LoginView, VerifyUserView
-
-
 class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny]
-    
     def create(self, request, *args, **kwargs):
         print("creating user...")
         response = super().create(request, *args, **kwargs)
@@ -96,10 +62,8 @@ class CreateUserView(generics.CreateAPIView):
             }
         )
 
-
 class LoginView(APIView):
     permission_classes = [permissions.AllowAny]
-
     def post(self, request):  # POST method
         username = request.data.get("username")
         password = request.data.get("password")
@@ -117,10 +81,8 @@ class LoginView(APIView):
             {"error": "Invalid Credentials"}, status=status.HTTP_401_UNAUTHORIZED
         )
 
-
 class VerifyUserView(APIView):
     permission_classes = [permissions.IsAuthenticated]
-
     def get(self, request):  # GET method
         user = User.objects.get(username=request.user)
         refresh = RefreshToken.for_user(request.user)
@@ -132,36 +94,29 @@ class VerifyUserView(APIView):
             }
         )
 
-
 class ProfileList(generics.ListCreateAPIView):
     serializer_class = ProfileSerializer
     permission_classes = [permissions.IsAuthenticated]
-
     def get_queryset(self):
         user = self.request.user
         return Profile.objects.filter(user=user)
-
     def perform_create(self, serializer):
         user = self.request.user
         if Profile.objects.filter(user=user).exists():
             raise ValidationError(f"The user {user} already has a profile.")
         serializer.save(user=self.request.user)
 
-
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ProfileSerializer
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = "id"
-
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance, context={"request": request})
-
         participations = Participation.objects.filter(profile=instance.id)
         participations_serializer = ParticipationSerializer(
             participations, many=True, context={"request": request}
         )
-
         return Response(
             {
                 "profile": serializer.data,
@@ -169,74 +124,59 @@ class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
             }
         )
 
-
 class ParticipationListByProfile(generics.ListAPIView):
     serializer_class = ParticipationSerializer
     permission_classes = [permissions.IsAuthenticated]
-
     def get_queryset(self):
         profile = self.kwargs["profile_id"]
         return Participation.objects.filter(profile=profile)
 
-
 class ParticipationListByHuntInstance(generics.ListAPIView):
     serializer_class = ParticipationSerializer
     permission_classes = [permissions.IsAuthenticated]
-
     def get_queryset(self):
         hunt_instance = self.kwargs["hunt_instance_id"]
         return Participation.objects.filter(hunt_instance=hunt_instance)
 
-
 class ParticipationCreate(generics.ListCreateAPIView):
     serializer_class = ParticipationSerializer
     permission_classes = [permissions.IsAuthenticated]
-
     def perform_create(self, serializer):
         profile = self.kwargs["profile_id"]
         hunt_instance = self.kwargs["hunt_instance_id"]
         serializer.save(hunt_instance=hunt_instance, profile=profile)
-
 
 class ParticipationDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ParticipationSerializer
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = "id"
 
-
 class HuntInstanceList(generics.ListCreateAPIView):
     serializer_class = HuntInstanceSerializer
     permission_classes = [permissions.IsAuthenticated]
-
     def get_queryset(self):
         hunt_template = self.kwargs["hunt_template_id"]
         return ScavengerHunt.objects.filter(scavenger_hunt=hunt_template)
-
     def perform_create(self, serializer):
         hunt_template = self.kwargs["hunt_template_id"]
         serializer.save(scavenger_hunt=hunt_template)
-
 
 class HuntInstanceDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = HuntInstanceSerializer
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = "id"
-
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance, context={"request": request})
-
         hunt_template_id = self.kwargs["hunt_template_id"]
         hunt_template = ScavengerHunt.objects.get(id=hunt_template_id)
         scavenger_hunt_serializer = ScavengerHuntSerializer(
             hunt_template, context={"request": request}
         )
-
         riddle_items = RiddleItem.objects.filter(scavenger_hunt=hunt_template_id)
         riddle_items_serializer = RiddleItemSerializer(
             riddle_items, many=True, context={"request": request}
         )
-
         return Response(
             {
                 "hunt_instance": serializer.data,
@@ -245,37 +185,29 @@ class HuntInstanceDetail(generics.RetrieveUpdateDestroyAPIView):
             }
         )
 
-
 class HuntTemplateList(generics.ListCreateAPIView):
     serializer_class = ScavengerHuntSerializer
     permission_classes = [permissions.IsAuthenticated]
-
     def get_queryset(self):
         return ScavengerHunt.objects.filter(creator=self.request.user)
-
     def perform_create(self, serializer):
         serializer.save(creator=self.request.user)
-
 
 class HuntTemplateDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ScavengerHuntSerializer
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = "id"
-
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance, context={"request": request})
-
         hunt_instances = HuntInstance.objects.filter(scavenger_hunt=instance.id)
         hunt_instances_serializer = HuntInstanceSerializer(
             hunt_instances, many=True, context={"request": request}
         )
-
         riddle_items = RiddleItem.objects.filter(scavenger_hunt=instance.id)
         riddle_items_serializer = RiddleItemSerializer(
             riddle_items, many=True, context={"request": request}
         )
-
         return Response(
             {
                 "hunt_template": serializer.data,
@@ -284,19 +216,15 @@ class HuntTemplateDetail(generics.RetrieveUpdateDestroyAPIView):
             }
         )
 
-
 class RiddleItemList(generics.ListCreateAPIView):
     serializer_class = RiddleItemSerializer
     permission_classes = [permissions.IsAuthenticated]
-
     def get_queryset(self):
         scavenger_hunt = self.kwargs["hunt_template_id"]
         return RiddleItem.objects.filter(scavenger_hunt=scavenger_hunt)
-
     def perform_create(self, serializer):
         scavenger_hunt = self.kwargs["hunt_template_id"]
         serializer.save(scavenger_hunt=scavenger_hunt)
-
 
 class RiddleItemDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = RiddleItemSerializer
@@ -304,10 +232,9 @@ class RiddleItemDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = "id"
 
-
 class RiddleItemSubmissionList(generics.ListCreateAPIView):
     serializer_class = RiddleItemSubmissionSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
     def get_queryset(self):
         riddle_item = self.kwargs["riddle_item_id"]
@@ -316,35 +243,47 @@ class RiddleItemSubmissionList(generics.ListCreateAPIView):
             riddle_item=riddle_item, participation=participation
         )
 
-    def perform_create(self, serializer):
-        riddle_item = self.kwargs["riddle_item_id"]
-        participation = self.kwargs["participation_id"]
-        # TODO: 
-        
-        serializer.save(riddle_item=riddle_item, participation=participation)
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        image_data = request.data.get("image")
+        label_data = request.data.get("label")
+        image_compare_output = upload_image(image_data, label_data)
+        print(image_compare_output)
+        self.perform_create(serializer, image_compare_output)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
+    def perform_create(self, serializer, image_compare_output):
+        riddle_item_id = self.kwargs["riddle_item_id"]
+        participation_id = self.kwargs["participation_id"]
+        
+        # Retrieve the instances of RiddleItem and Participation
+        riddle_item = RiddleItem.objects.get(id=riddle_item_id)
+        participation = Participation.objects.get(id=participation_id)
+        
+        correct = image_compare_output['is_object_present']
+        
+        # Save with instances of RiddleItem and Participation
+        serializer.save(riddle_item=riddle_item, participation=participation, correct=correct)
 
 class RiddleItemSubmissionDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = RiddleItemSubmissionSerializer
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = "id"
-
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance, context={"request": request})
-
         riddle_item_id = self.kwargs["riddle_item_id"]
         riddle_item = RiddleItem.objects.get(id=riddle_item_id)
         riddle_item_serializer = RiddleItemSerializer(
             riddle_item, context={"request": request}
         )
-
         participation_id = self.kwargs["participation_id"]
         participation = Participation.objects.get(id=participation_id)
         participation_serializer = ParticipationSerializer(
             participation, context={"request": request}
         )
-
         return Response(
             {
                 "riddle_item_submission": serializer.data,
@@ -353,12 +292,10 @@ class RiddleItemSubmissionDetail(generics.RetrieveUpdateDestroyAPIView):
             }
         )
 
-
 class ItemList(generics.ListCreateAPIView):
     serializer_class = ItemSerializer
     queryset = Item.objects.all()
     permission_classes = [permissions.AllowAny]
-
     def create(self, request, *args, **kwargs):
         if isinstance(request.data, list):
             # If the request data is a list, we need to validate and save each item
@@ -369,7 +306,6 @@ class ItemList(generics.ListCreateAPIView):
         else:
             # Handle single dictionary case
             return super().create(request, *args, **kwargs)
-
 
 class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ItemSerializer

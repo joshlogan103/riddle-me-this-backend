@@ -52,7 +52,7 @@ def predict_image(image_path, expected_label):
         
     
     
-    return {'predictions': result}
+    return {'predictions': result, 'is_object_present': is_object_present}
 
 # For testing, you can run this script directly
 # if __name__ == "__main__":
