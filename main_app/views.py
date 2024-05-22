@@ -203,6 +203,10 @@ class HuntInstanceDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = "id"
 
+    def get_queryset(self):
+        hunt_template_id = self.kwargs["hunt_template_id"]
+        return HuntInstance.objects.filter(scavenger_hunt_id=hunt_template_id)
+
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance, context={"request": request})
