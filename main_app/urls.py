@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CreateUserView, LoginView, VerifyUserView, ProfileList, ProfileDetail, ParticipationListByProfile, ParticipationListByHuntInstance, ParticipationCreate, ParticipationDetail, HuntInstanceList, HuntInstanceDetail, HuntTemplateList, HuntTemplateDetail, RiddleItemList, RiddleItemDetail, RiddleItemSubmissionList, RiddleItemSubmissionDetail, ItemList, ItemDetail, APILandingPage, upload_image 
+from .views import CreateUserView, LoginView, VerifyUserView, ProfileList, ProfileDetail, ParticipationListByProfile, ParticipationListByHuntInstance, ParticipationCreate, ParticipationDetail, HuntInstanceListAll, HuntInstanceList, HuntInstanceDetail, HuntTemplateList, HuntTemplateDetail, RiddleItemList, RiddleItemDetail, RiddleItemSubmissionList, RiddleItemSubmissionDetail, ItemList, ItemDetail, APILandingPage, upload_image 
 
 
 urlpatterns = [
@@ -22,6 +22,7 @@ urlpatterns = [
     path('api/profiles/<int:profile_id>/hunt-instance/<int:hunt_instance_id>/participations/<int:id>/', ParticipationDetail.as_view(), name='participation-detail'),
 
     # Hunt Instances
+    path('api/hunt-instances/', HuntInstanceListAll.as_view(), name='hunt-instance-list-all'),
     path('api/hunt-templates/<int:hunt_template_id>/hunt-instances/', HuntInstanceList.as_view(), name='hunt-instance-list'),
     path('api/hunt-templates/<int:hunt_template_id>/hunt-instances/<int:id>/', HuntInstanceDetail.as_view(), name='hunt-instance-detail'),
 

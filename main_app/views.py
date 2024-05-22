@@ -178,6 +178,10 @@ class ParticipationDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = "id"
 
+class HuntInstanceListAll(generics.ListAPIView):
+    serializer_class = HuntInstanceSerializer
+    queryset = HuntInstance.objects.all()
+    permission_classes = [permissions.IsAuthenticated]    
 
 class HuntInstanceList(generics.ListCreateAPIView):
     serializer_class = HuntInstanceSerializer
