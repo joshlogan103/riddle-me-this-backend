@@ -112,18 +112,30 @@ class ProfileList(generics.ListCreateAPIView):
     def get_queryset(self):
         user = self.request.user
         return Profile.objects.filter(user=user)
+    
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
 
-    def perform_create(self, serializer):
-        user = self.request.user
-        if Profile.objects.filter(user=user).exists():
-            raise ValidationError(f"The user {user} already has a profile.")
-        serializer.save(user=self.request.user)
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
 
+        serializer = self.get_serializer(queryset, many=True)
+
+        participations = Participation.objects.filter(profile__in=queryset)
+        participations_serializer = ParticipationSerializer(
+            participations, many=True, context={"request": request}
+        )
+        return Response({
+            'profile': serializer.data,
+            'participations': participations_serializer.data
+        })
 
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ProfileSerializer
     permission_classes = [permissions.IsAuthenticated]
-    lookup_field = "id"
+    lookup_field = "user_id"
 
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
@@ -181,7 +193,7 @@ class ParticipationDetail(generics.RetrieveUpdateDestroyAPIView):
 class HuntInstanceListAll(generics.ListAPIView):
     serializer_class = HuntInstanceSerializer
     queryset = HuntInstance.objects.all()
-    permission_classes = [permissions.IsAuthenticated]    
+    permission_classes = [permissions.AllowAny]    
 
 class HuntInstanceList(generics.ListCreateAPIView):
     serializer_class = HuntInstanceSerializer

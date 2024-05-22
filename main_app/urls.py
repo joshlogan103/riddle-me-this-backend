@@ -12,8 +12,8 @@ urlpatterns = [
     path('api/users/token/refresh/', VerifyUserView.as_view(), name='token_refresh'),
 
     # Profiles
-    path('api/users/<int:user_id>/profiles/', ProfileList.as_view(), name='profile-list'),
-    path('api/users/<int:user_id>/profiles/<int:id>/', ProfileDetail.as_view(), name='profile-detail'),
+    path('api/profiles/', ProfileList.as_view(), name='profile-list'),
+    path('api/users/<int:user_id>/profiles/detail/', ProfileDetail.as_view(), name='profile-detail'),
 
     # Participations
     path('api/profiles/<int:profile_id>/participations/', ParticipationListByProfile.as_view(), name='participations-list-by-profile'),
