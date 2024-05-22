@@ -63,6 +63,7 @@ class ScavengerHuntSerializer(serializers.ModelSerializer):
 
 class RiddleItemSerializer(serializers.ModelSerializer):
     item = serializers.PrimaryKeyRelatedField(queryset=Item.objects.all())
+    item = SimpleItemSerializer(read_only=True)
     scavenger_hunt = SimpleScavengerHuntSerializer(read_only=True)
     riddle_item_submissions = SimpleRiddleItemSubmissionSerializer(many=True, read_only=True)
 
