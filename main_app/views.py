@@ -173,6 +173,15 @@ class ParticipationListByHuntInstance(generics.ListAPIView):
     def get_queryset(self):
         hunt_instance = self.kwargs["hunt_instance_id"]
         return Participation.objects.filter(hunt_instance=hunt_instance)
+    
+class ParticipationListByHuntInstanceAndProfile(generics.ListAPIView):
+    serializer_class = ParticipationSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        hunt_instance = self.kwargs["hunt_instance_id"]
+        profile = self.kwargs["profile_id"]
+        return Participation.objects.filter(hunt_instance=hunt_instance, profile=profile)
 
 
 class ParticipationCreate(generics.ListCreateAPIView):
