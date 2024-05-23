@@ -60,6 +60,8 @@ class CreateUserView(generics.CreateAPIView):
         print(f"User created: {user}")
         refresh = RefreshToken.for_user(user)
         print(f"Generated tokens: Refresh - {refresh}, Access - {refresh.access_token}")
+
+        Profile.objects.create(user=user, profile_pic='https://www.defaultprofilephotourl.com')
         return Response(
             {
                 "refresh": str(refresh),
