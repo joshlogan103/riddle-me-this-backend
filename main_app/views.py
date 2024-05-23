@@ -303,6 +303,17 @@ class RiddleItemList(generics.ListCreateAPIView):
         scavenger_hunt = ScavengerHunt.objects.get(id=scavenger_hunt_id)
         return RiddleItem.objects.filter(scavenger_hunt=scavenger_hunt)
 
+    def create(self, request, *args, **kwargs):
+        if isinstance(request.data, list):
+            # If the request data is a list, we need to validate and save each item
+            serializer = self.get_serializer(data=request.data, many=True)
+            serializer.is_valid(raise_exception=True)
+            self.perform_create(serializer)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            # Handle single dictionary case
+            return super().create(request, *args, **kwargs)
+
     def perform_create(self, serializer):
         scavenger_hunt_id = self.kwargs["hunt_template_id"]
         scavenger_hunt = ScavengerHunt.objects.get(id=scavenger_hunt_id)
