@@ -2,7 +2,8 @@
 
 API for scavenger hunt app that uses riddles for clues to the items that must be found.
 
- ## Screenshot/Logo: A screenshot of your app or a logo.
+![mag-logo_720](https://github.com/joshlogan103/riddle-me-this-backend/assets/100243038/b2fb997b-0145-4010-ae76-8ec4dabcb915)
+
 
 ### App Description:
 
@@ -23,15 +24,15 @@ Welcome to Riddle Me This, the ultimate scavenger hunt app that combines fun, ad
 **Photo Verification with Machine Learning**: Once you find an item, take a photo and let our advanced machine learning technology verify its accuracy. No more disputes or second-guessing—get instant feedback and move on to your next clue!
 
 
- ## Getting Started: Include a link to the **deployed app** along with a link to the back-end GitHub repo.
+ ## Getting Started:
   ### **Frontend**:
-https://github.com/joshlogan103/riddle-me-this-frontend
+https://riddle-me-this-pi.vercel.app/
  
  ### **Backend**: 
-https://github.com/joshlogan103/riddle-me-this-backend
+https://riddle-me-this-e41841fe3e54.herokuapp.com
 
  
- ## Contributors: Include a link to each member's GitHub profile.
+ ## Contributors: 
 
  Josh L:  https://github.com/joshlogan103/
 
@@ -41,7 +42,7 @@ https://github.com/joshlogan103/riddle-me-this-backend
 
  Aris:  https://github.com/aspenos/
 
- ## Attributions: Include links to any external resources (such as libraries or assets) you used to develop your application.
+ ## Attributions: 
 https://opencv.org/
 
 https://www.tensorflow.org/
@@ -52,17 +53,19 @@ https://keras.io/
 
 https://firebase.google.com/
 
+https://www.docker.com/
+
  ## Technologies Used: List of the technologies used.
  - HTML
  - CSS
  - JavaScript
- - React js
+ - React.js
  - Django
  - PostgreSQL
  - OpenCV
  - TensorFlow
  - Firebase
- 
+ - Docker
 
  ## **Frontend**:
  - React.js
@@ -71,4 +74,8 @@ https://firebase.google.com/
  - Django
  - PostgreSQL
 
- ## Next Steps: Planned future enhancements (icebox items).
+ ## Next Steps: Planned Future Enhancements.
+- Prompt for calendar events to your device when you join a hunt.
+- Logging how many hunts you have particpated in
+- The ability to rate a hunt
+- The ability to toggle whether all clues are visible from the start
