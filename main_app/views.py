@@ -204,6 +204,38 @@ class ParticipationDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = "id"
 
+class ParticipationCountCorrectSubmissions(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, participation_id):
+        try:
+            participation = Participation.objects.get(id=participation_id)
+            correct_submissions = self.count_unique_correct_submissions(participation)
+            participation.items_found = correct_submissions
+            participation.save()
+
+            participation_serializer = ParticipationSerializer(participation, context={"request": request})
+
+            return Response({
+                'participation': participation_serializer.data,
+                'correct_submissions': correct_submissions
+            }, status=status.HTTP_200_OK)
+        except Participation.DoesNotExist:
+            return Response({"error": "Participation not found."}, status=status.HTTP_404_NOT_FOUND)
+
+    def count_unique_correct_submissions(self, participation):
+        # Fetch all correct submissions for the given participation
+        correct_submissions = RiddleItemSubmission.objects.filter(
+            participation=participation,
+            correct=True
+        ).distinct('riddle_item')
+
+        # Use a set to store unique riddle item IDs
+        unique_riddle_items = set(submission.riddle_item.id for submission in correct_submissions)
+        
+        return len(unique_riddle_items)
+
+
 class HuntInstanceListAll(generics.ListAPIView):
     serializer_class = HuntInstanceSerializer
     queryset = HuntInstance.objects.all()

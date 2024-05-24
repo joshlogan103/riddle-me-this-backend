@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CreateUserView, LoginView, VerifyUserView, ProfileList, ProfileDetail, ParticipationListByProfile, ParticipationListByHuntInstance, ParticipationListByHuntInstanceAndProfile, ParticipationCreate, ParticipationDetail, HuntInstanceListAll, HuntInstanceList, HuntInstanceDetail, HuntTemplateList, HuntTemplateDetail, RiddleItemList, RiddleItemDetail, RiddleItemSubmissionList, RiddleItemSubmissionDetail, ItemList, ItemDetail, APILandingPage, upload_image 
+from .views import CreateUserView, LoginView, VerifyUserView, ProfileList, ProfileDetail, ParticipationListByProfile, ParticipationListByHuntInstance, ParticipationListByHuntInstanceAndProfile, ParticipationCreate, ParticipationDetail, ParticipationCountCorrectSubmissions, HuntInstanceListAll, HuntInstanceList, HuntInstanceDetail, HuntTemplateList, HuntTemplateDetail, RiddleItemList, RiddleItemDetail, RiddleItemSubmissionList, RiddleItemSubmissionDetail, ItemList, ItemDetail, APILandingPage, upload_image 
 
 
 urlpatterns = [
@@ -21,6 +21,7 @@ urlpatterns = [
     path('api/profiles/<int:profile_id>/hunt-instance/<int:hunt_instance_id>/participations/', ParticipationListByHuntInstanceAndProfile.as_view(), name='participations-list-by-profile-and-hunt-instance'),
     path('api/profiles/<int:profile_id>/hunt-instance/<int:hunt_instance_id>/participations/create/', ParticipationCreate.as_view(), name = 'participation-create'),
     path('api/profiles/<int:profile_id>/hunt-instance/<int:hunt_instance_id>/participations/<int:id>/', ParticipationDetail.as_view(), name='participation-detail'),
+    path('api/participations/<int:participation_id>/count-correct', ParticipationCountCorrectSubmissions.as_view(), name='participation-count-correct-submissions'),
 
     # Hunt Instances
     path('api/hunt-instances/', HuntInstanceListAll.as_view(), name='hunt-instance-list-all'),
