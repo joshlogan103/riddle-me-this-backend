@@ -21,7 +21,7 @@ urlpatterns = [
     path('api/profiles/<int:profile_id>/hunt-instance/<int:hunt_instance_id>/participations/', ParticipationListByHuntInstanceAndProfile.as_view(), name='participations-list-by-profile-and-hunt-instance'),
     path('api/profiles/<int:profile_id>/hunt-instance/<int:hunt_instance_id>/participations/create/', ParticipationCreate.as_view(), name = 'participation-create'),
     path('api/profiles/<int:profile_id>/hunt-instance/<int:hunt_instance_id>/participations/<int:id>/', ParticipationDetail.as_view(), name='participation-detail'),
-    path('api/participations/<int:participation_id>/count-correct', ParticipationCountCorrectSubmissions.as_view(), name='participation-count-correct-submissions'),
+    path('api/participations/<int:participation_id>/count-correct/', ParticipationCountCorrectSubmissions.as_view(), name='participation-count-correct-submissions'),
 
     # Hunt Instances
     path('api/hunt-instances/', HuntInstanceListAll.as_view(), name='hunt-instance-list-all'),
